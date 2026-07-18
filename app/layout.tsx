@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     description: site.description,
     images: [site.ogImage],
   },
+  verification: {
+    google: 'PHfRty4TEUCH78N28lbQLiaMOkvvIMDsPlj38f0_z_Y',
+  },
   icons: {
     icon: [
       { url: '/siteicon.webp', type: 'image/webp' },
