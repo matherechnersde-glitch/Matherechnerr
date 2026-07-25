@@ -24,6 +24,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  datePublished: '2026-07-25',
+  dateModified: '2026-07-25',
 };
 
 const faqSchema = {

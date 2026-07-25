@@ -61,11 +61,14 @@ const orgSchema = {
       name: site.name,
       url: site.url,
       logo: `${site.url}/Matherechnerr-logo.webp`,
+      foundingDate: '2026',
     },
     {
       '@type': 'WebSite',
       name: site.name,
       url: site.url,
+      datePublished: '2026-07-25',
+      dateModified: '2026-07-25',
     },
   ],
 };
