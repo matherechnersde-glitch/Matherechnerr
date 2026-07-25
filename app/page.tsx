@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { content } from '@/content/de';
-import Calculator from '@/components/Calculator';
+import Calculator from '@/components/CalculatorNew';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
