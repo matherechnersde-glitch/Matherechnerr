@@ -24,8 +24,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-07-25',
-  dateModified: '2026-07-25',
+  datePublished: '2026-08-03T01:32:25+05:00',
+  dateModified: '2026-08-03T01:32:25+05:00',
 };
 
 const faqSchema = {
@@ -82,7 +82,7 @@ export default function HomePage() {
         {/* Taschenrechner mit Wurzel, Pi und Klammern */}
         <ContentSection soft={sectionFunctions.soft} h2={sectionFunctions.h2}>
           <p>{sectionFunctions.intro}</p>
-          <HighlightGrid items={sectionFunctions.subsections} />
+          <HighlightGrid items={sectionFunctions.subsections} variant="features" />
         </ContentSection>
 
         {/* Wer profitiert */}

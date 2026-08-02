@@ -67,8 +67,8 @@ const orgSchema = {
       '@type': 'WebSite',
       name: site.name,
       url: site.url,
-      datePublished: '2026-07-25',
-      dateModified: '2026-07-25',
+      datePublished: '2026-08-03T01:32:25+05:00',
+      dateModified: '2026-08-03T01:32:25+05:00',
     },
   ],
 };

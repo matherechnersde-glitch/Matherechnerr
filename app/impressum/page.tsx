@@ -4,9 +4,10 @@ import { content } from '@/content/de';
 
 export const metadata: Metadata = {
   title: content.pages.impressum.title,
-  description: 'Impressum von Matherechner gemäß § 5 TMG – rechtliche Angaben zum Betreiber des kostenlosen Online-Taschenrechners matherechnerr.de.',
+  description: 'Impressum von Matherechner gemäß § 5 TMG – rechtliche Angaben zum Betreiber des kostenlosen Online-Taschenrechners matherechners.de.',
   alternates: { canonical: '/impressum/' },
   openGraph: { url: '/impressum/' },
+  robots: { index: true, follow: true },
 };
 
 export default function ImpressumPage() {

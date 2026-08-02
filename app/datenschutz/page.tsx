@@ -4,9 +4,13 @@ import { content } from '@/content/de';
 
 export const metadata: Metadata = {
   title: content.pages.datenschutz.title,
-  description: 'Datenschutzerklärung von Matherechner: keine Tracking-Cookies, kein Google Analytics, DSGVO-konform. Ihr Rechenverlauf bleibt ausschließlich im lokalen Browser-Speicher.',
+  description: 'Erfahren Sie, wie Matherechner Ihre Daten schützt, welche Informationen verarbeitet werden und welche Rechte Sie nach der DSGVO haben.',
   alternates: { canonical: '/datenschutz/' },
-  openGraph: { url: '/datenschutz/' },
+  openGraph: {
+    url: '/datenschutz/',
+    title: 'Datenschutz beim Online-Taschenrechner',
+    description: 'Informationen zum Datenschutz, zur lokalen Speicherung und zu Ihren Rechten nach der DSGVO.',
+  },
 };
 
 export default function DatenschutzPage() {
@@ -20,7 +24,7 @@ export default function DatenschutzPage() {
 
       <ContentSection soft={false} h2="Verantwortlicher">
         <p>
-          Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist der Betreiber von matherechnerr.de. Kontaktdaten finden Sie auf der{' '}
+          Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist der Betreiber von matherechners.de. Kontaktdaten finden Sie auf der{' '}
           <a href="/impressum/" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>Impressum-Seite</a>.
         </p>
       </ContentSection>
@@ -83,7 +87,7 @@ export default function DatenschutzPage() {
 
       <ContentSection soft={false} h2="Änderungen dieser Datenschutzerklärung">
         <p>
-          Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen anzupassen oder um Änderungen unserer Dienste zu berücksichtigen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar. Stand: Juli 2026.
+          Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen anzupassen oder um Änderungen unserer Dienste zu berücksichtigen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar. Stand: August 2026.
         </p>
       </ContentSection>
     </main>

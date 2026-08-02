@@ -11,7 +11,7 @@ export interface HighlightItem {
 export const content = {
   site: {
     name: 'Matherechner',
-    url: 'https://matherechnerr.de',
+    url: 'https://matherechners.de',
     title: 'Matherechner Kostenloser wissenschaftlicher Taschenrechner',
     description:
       'Probieren Sie Matherechner aus – ein kostenloses Online-Tool, mit dem Sie komplexe Aufgaben mühelos lösen können.',
@@ -29,7 +29,7 @@ export const content = {
   },
 
   hero: {
-    h1: 'Matherechner – kostenlos online',
+    h1: 'Matherechner kostenlos online',
     intro: [
       'Stellen Sie sich vor, Sie lösen gerade eine komplexe Mathe-Hausaufgabe, aber der Taschenrechner Ihres Smartphones beherrscht nur die Grundrechenarten Addition, Subtraktion, Multiplikation und Division – mehr nicht. Matherechner wurde genau für dieses Problem entwickelt und bietet nicht nur Standardfunktionen, sondern auch erweiterte Funktionen wie trigonometrische Funktionen, Potenzen und Prozentrechnungen.',
       'Matherechner ist ein kostenloser Online-wissenschaftlicher Taschenrechner, der fast alles bewältigt, was ein normaler Taschenrechner nicht kann. Er funktioniert direkt in Ihrem Browser auf jedem Smartphone, Tablet oder Laptop – ganz ohne Download, Registrierung und kostenlos. Sie müssen keinen Taschenrechner oder eine App für alltägliche Rechenaufgaben kaufen, denn diese Seite ist kostenlos, läuft in Ihrem Browser und erfordert keinerlei Installation.',
@@ -171,12 +171,12 @@ export const content = {
       links: [
         { label: 'Impressum', href: '/impressum/' },
         { label: 'Datenschutzerklärung', href: '/datenschutz/' },
-        { label: 'AGB', href: '/agb/' },
+        { label: 'Nutzungsbedingungen', href: '/nutzungsbedingungen/' },
         { label: 'FAQ', href: '/#faq' },
       ],
     },
     bottomLinks: [
-      { label: 'AGB', href: '/agb/' },
+      { label: 'Nutzungsbedingungen', href: '/nutzungsbedingungen/' },
       { label: 'Datenschutzerklärung', href: '/datenschutz/' },
     ],
     copyright: '©2026 Matherechner. Alle Rechte vorbehalten.',
@@ -188,7 +188,7 @@ export const content = {
       h1: 'Impressum',
     },
     datenschutz: {
-      title: 'Datenschutzerklärung',
+      title: 'Datenschutz beim Online-Taschenrechner',
       h1: 'Datenschutzerklärung',
     },
     agb: {
@@ -200,7 +200,7 @@ export const content = {
       h1: 'Über uns',
     },
     kontakt: {
-      title: 'Kontakt – Matherechner',
+      title: 'Kontakt und Support',
       h1: 'Kontakt',
     },
     notFound: {

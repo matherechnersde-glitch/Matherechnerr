@@ -5,8 +5,9 @@ import { content } from '@/content/de';
 export const metadata: Metadata = {
   title: content.pages.agb.title,
   description: 'Allgemeine Geschäftsbedingungen für die Nutzung des kostenlosen Online-Taschenrechners Matherechner – transparent, ohne Registrierung, ohne versteckte Kosten.',
-  alternates: { canonical: '/agb/' },
-  openGraph: { url: '/agb/' },
+  alternates: { canonical: '/nutzungsbedingungen/' },
+  openGraph: { url: '/nutzungsbedingungen/' },
+  robots: { index: true, follow: true },
 };
 
 export default function AgbPage() {
@@ -20,7 +21,7 @@ export default function AgbPage() {
 
       <ContentSection soft={false} h2="§ 1 Geltungsbereich und Nutzung">
         <p>
-          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung des kostenlosen Online-Taschenrechners auf <strong>matherechnerr.de</strong>. Mit dem Zugriff auf diese Website erklären Sie sich mit den nachfolgenden Bedingungen einverstanden.
+          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung des kostenlosen Online-Taschenrechners auf <strong>matherechners.de</strong>. Mit dem Zugriff auf diese Website erklären Sie sich mit den nachfolgenden Bedingungen einverstanden.
         </p>
         <p>
           Der Taschenrechner steht jedem Nutzer kostenlos zur Verfügung. Eine Registrierung, ein Benutzerkonto oder eine Anmeldung ist nicht erforderlich. Es gelten keinerlei Nutzungsentgelte.
@@ -73,7 +74,7 @@ export default function AgbPage() {
 
       <ContentSection soft={true} h2="§ 6 Änderungen der AGB">
         <p>
-          Wir behalten uns vor, diese AGB jederzeit zu ändern. Änderungen werden auf dieser Seite veröffentlicht. Durch die weitere Nutzung der Website nach einer Änderung stimmen Sie den aktualisierten Bedingungen zu. Stand: Juli 2026.
+          Wir behalten uns vor, diese AGB jederzeit zu ändern. Änderungen werden auf dieser Seite veröffentlicht. Durch die weitere Nutzung der Website nach einer Änderung stimmen Sie den aktualisierten Bedingungen zu. Stand: August 2026.
         </p>
         <p>
           Bei Fragen zu diesen AGB wenden Sie sich bitte an uns über die{' '}

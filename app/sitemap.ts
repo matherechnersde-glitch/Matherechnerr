@@ -10,6 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/kontakt/`,     lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.6 },
     { url: `${BASE}/impressum/`,   lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
     { url: `${BASE}/datenschutz/`, lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
-    { url: `${BASE}/agb/`,         lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
+    { url: `${BASE}/nutzungsbedingungen/`,         lastModified: new Date(), changeFrequency: 'yearly',  priority: 0.3 },
   ];
 }

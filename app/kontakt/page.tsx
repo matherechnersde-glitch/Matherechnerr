@@ -6,11 +6,11 @@ import { content } from '@/content/de';
 
 export const metadata: Metadata = {
   title: content.pages.kontakt.title,
-  description: 'Kontakt mit dem Matherechner-Team aufnehmen – für Feedback, Fehlermeldungen oder Fragen. Wir antworten in der Regel innerhalb von 1–3 Werktagen.',
+  description: 'Kontaktieren Sie das Matherechner-Team bei Fragen, Feedback oder technischen Problemen. Wir helfen Ihnen schnell und unkompliziert weiter.',
   alternates: { canonical: '/kontakt/' },
   openGraph: {
     url: '/kontakt/',
-    description: 'Kontakt mit dem Matherechner-Team aufnehmen – für Feedback, Fehlermeldungen oder Fragen.',
+    description: 'Kontaktieren Sie das Matherechner-Team bei Fragen, Feedback oder technischen Problemen. Wir helfen Ihnen schnell und unkompliziert weiter.',
   },
 };
 
