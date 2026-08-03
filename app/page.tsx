@@ -24,8 +24,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-08-03T01:32:25+05:00',
-  dateModified: '2026-08-03T01:32:25+05:00',
+  datePublished: '2026-08-03T21:38:25+05:00',
+  dateModified: '2026-08-03T21:38:25+05:00',
 };
 
 const faqSchema = {
@@ -68,14 +68,7 @@ export default function HomePage() {
         {/* Was unterscheidet einen wissenschaftlichen Taschenrechner */}
         <ContentSection soft={sectionCompare.soft} h2={sectionCompare.h2}>
           <p>{sectionCompare.intro}</p>
-          <div className="highlight-grid highlight-grid-2col">
-            {sectionCompare.comparison.map((item) => (
-              <div key={item.h3}>
-                <h3>{item.h3}</h3>
-                <p>{item.p}</p>
-              </div>
-            ))}
-          </div>
+          <HighlightGrid items={sectionCompare.comparison} variant="comparison" />
           <p style={{ marginTop: '18px' }}>{sectionCompare.conclusion}</p>
         </ContentSection>
 

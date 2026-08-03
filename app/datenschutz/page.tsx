@@ -3,19 +3,30 @@ import ContentSection from '@/components/ContentSection';
 import { content } from '@/content/de';
 
 export const metadata: Metadata = {
-  title: content.pages.datenschutz.title,
-  description: 'Erfahren Sie, wie Matherechner Ihre Daten schützt, welche Informationen verarbeitet werden und welche Rechte Sie nach der DSGVO haben.',
+  title: 'Datenschutzerklärung und Datenschutz',
+  description: 'Die Datenschutzerklärung von Matherechner informiert über lokale Speicherung, Cookies, verarbeitete Daten und Ihre Rechte nach der DSGVO.',
   alternates: { canonical: '/datenschutz/' },
   openGraph: {
     url: '/datenschutz/',
-    title: 'Datenschutz beim Online-Taschenrechner',
-    description: 'Informationen zum Datenschutz, zur lokalen Speicherung und zu Ihren Rechten nach der DSGVO.',
+    title: 'Datenschutzerklärung und Datenschutz',
+    description: 'Die Datenschutzerklärung von Matherechner informiert über lokale Speicherung, Cookies, verarbeitete Daten und Ihre Rechte nach der DSGVO.',
   },
+  robots: { index: true, follow: true },
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Datenschutzerklärung',
+  url: content.site.url + '/datenschutz/',
+  datePublished: '2026-08-03T21:38:25+05:00',
+  dateModified: '2026-08-03T21:38:25+05:00',
 };
 
 export default function DatenschutzPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <section className="legal-hero hero-section">
         <div className="page-shell">
           <h1>{content.pages.datenschutz.h1}</h1>
@@ -24,7 +35,7 @@ export default function DatenschutzPage() {
 
       <ContentSection soft={false} h2="Verantwortlicher">
         <p>
-          Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist der Betreiber von matherechners.de. Kontaktdaten finden Sie auf der{' '}
+          Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist der Betreiber von matherechnerr.de. Kontaktdaten finden Sie auf der{' '}
           <a href="/impressum/" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>Impressum-Seite</a>.
         </p>
       </ContentSection>

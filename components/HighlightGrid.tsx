@@ -2,7 +2,7 @@ import { HighlightItem } from '@/content/de';
 
 interface Props {
   items: HighlightItem[];
-  variant?: 'default' | 'features';
+  variant?: 'default' | 'features' | 'comparison';
 }
 
 const featureIcons = [
@@ -14,6 +14,33 @@ const featureIcons = [
 ];
 
 export default function HighlightGrid({ items, variant = 'default' }: Props) {
+  if (variant === 'comparison') {
+    return (
+      <div className="comparison-card-grid">
+        {items.map((item, index) => (
+          <article key={item.h3} className={'comparison-card comparison-card-' + (index === 0 ? 'basic' : 'scientific')}>
+            <div className="comparison-card-top">
+              <div className="comparison-card-icon" aria-hidden="true">
+                {index === 0 ? (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+                    <path d="M4 7h6M7 4v6M14 7h6M4 17h6M14 14l6 6M20 14l-6 6" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 16c2.2-6 4.8-6 7 0s4.8 6 7 0M15 7h6M18 4v6" />
+                  </svg>
+                )}
+              </div>
+              <span className="comparison-card-label">{index === 0 ? 'Basis' : 'Erweitert'}</span>
+            </div>
+            <h3>{item.h3}</h3>
+            <p>{item.p}</p>
+          </article>
+        ))}
+      </div>
+    );
+  }
+
   if (variant === 'features') {
     return (
       <ol className="feature-card-list">

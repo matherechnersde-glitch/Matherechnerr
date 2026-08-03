@@ -3,16 +3,30 @@ import ContentSection from '@/components/ContentSection';
 import { content } from '@/content/de';
 
 export const metadata: Metadata = {
-  title: content.pages.impressum.title,
-  description: 'Impressum von Matherechner gemäß § 5 TMG – rechtliche Angaben zum Betreiber des kostenlosen Online-Taschenrechners matherechners.de.',
+  title: 'Impressum und Anbieterkennzeichnung',
+  description: 'Impressum und rechtliche Anbieterinformationen zum kostenlosen Online-Taschenrechner Matherechner auf matherechnerr.de.',
   alternates: { canonical: '/impressum/' },
-  openGraph: { url: '/impressum/' },
+  openGraph: {
+    url: '/impressum/',
+    title: 'Impressum und Anbieterkennzeichnung',
+    description: 'Impressum und rechtliche Anbieterinformationen zum kostenlosen Online-Taschenrechner Matherechner auf matherechnerr.de.',
+  },
   robots: { index: true, follow: true },
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Impressum',
+  url: content.site.url + '/impressum/',
+  datePublished: '2026-08-03T21:38:25+05:00',
+  dateModified: '2026-08-03T21:38:25+05:00',
 };
 
 export default function ImpressumPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <section className="legal-hero hero-section">
         <div className="page-shell">
           <h1>{content.pages.impressum.h1}</h1>

@@ -3,16 +3,30 @@ import ContentSection from '@/components/ContentSection';
 import { content } from '@/content/de';
 
 export const metadata: Metadata = {
-  title: content.pages.agb.title,
-  description: 'Allgemeine Geschäftsbedingungen für die Nutzung des kostenlosen Online-Taschenrechners Matherechner – transparent, ohne Registrierung, ohne versteckte Kosten.',
-  alternates: { canonical: '/nutzungsbedingungen/' },
-  openGraph: { url: '/nutzungsbedingungen/' },
+  title: 'AGB für den Online-Taschenrechner',
+  description: 'Lesen Sie die Allgemeinen Geschäftsbedingungen von Matherechner mit Informationen zur kostenlosen Nutzung, zum Leistungsumfang und zur Haftung.',
+  alternates: { canonical: '/agb/' },
+  openGraph: {
+    url: '/agb/',
+    title: 'AGB für den Online-Taschenrechner',
+    description: 'Lesen Sie die Allgemeinen Geschäftsbedingungen von Matherechner mit Informationen zur kostenlosen Nutzung, zum Leistungsumfang und zur Haftung.',
+  },
   robots: { index: true, follow: true },
+};
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Allgemeine Geschäftsbedingungen',
+  url: content.site.url + '/agb/',
+  datePublished: '2026-08-03T21:38:25+05:00',
+  dateModified: '2026-08-03T21:38:25+05:00',
 };
 
 export default function AgbPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <section className="legal-hero hero-section">
         <div className="page-shell">
           <h1>{content.pages.agb.h1}</h1>
@@ -21,7 +35,7 @@ export default function AgbPage() {
 
       <ContentSection soft={false} h2="§ 1 Geltungsbereich und Nutzung">
         <p>
-          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung des kostenlosen Online-Taschenrechners auf <strong>matherechners.de</strong>. Mit dem Zugriff auf diese Website erklären Sie sich mit den nachfolgenden Bedingungen einverstanden.
+          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung des kostenlosen Online-Taschenrechners auf <strong>matherechnerr.de</strong>. Mit dem Zugriff auf diese Website erklären Sie sich mit den nachfolgenden Bedingungen einverstanden.
         </p>
         <p>
           Der Taschenrechner steht jedem Nutzer kostenlos zur Verfügung. Eine Registrierung, ein Benutzerkonto oder eine Anmeldung ist nicht erforderlich. Es gelten keinerlei Nutzungsentgelte.

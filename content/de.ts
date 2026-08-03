@@ -11,7 +11,7 @@ export interface HighlightItem {
 export const content = {
   site: {
     name: 'Matherechner',
-    url: 'https://matherechners.de',
+    url: 'https://matherechnerr.de',
     title: 'Matherechner Kostenloser wissenschaftlicher Taschenrechner',
     description:
       'Probieren Sie Matherechner aus – ein kostenloses Online-Tool, mit dem Sie komplexe Aufgaben mühelos lösen können.',
