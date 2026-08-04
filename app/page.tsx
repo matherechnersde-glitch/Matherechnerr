@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { content } from '@/content/de';
 import Calculator from '@/components/CalculatorNew';
 
@@ -24,8 +25,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-08-03T21:38:25+05:00',
-  dateModified: '2026-08-03T21:38:25+05:00',
+  datePublished: '2026-08-04T21:01:05+05:00',
+  dateModified: '2026-08-04T21:01:05+05:00',
 };
 
 const faqSchema = {
@@ -80,7 +81,7 @@ export default function HomePage() {
 
         {/* Wer profitiert */}
         <ContentSection soft={sectionWho.soft} h2={sectionWho.h2}>
-          <HighlightGrid items={sectionWho.highlights} />
+          <HighlightGrid items={sectionWho.highlights} variant="audience" />
         </ContentSection>
 
         {/* Warum Online > Physisch */}
@@ -93,6 +94,14 @@ export default function HomePage() {
           <ol className="steps-list">
             {sectionHow.steps.map((step, i) => <li key={i}>{step}</li>)}
           </ol>
+          <Image
+            className="how-section-image"
+            src="/Matherechner2026.webp"
+            alt="Matherechner im Einsatz – Schritt-für-Schritt-Anwendung des Online-Taschenrechners"
+            width={1448}
+            height={1086}
+            sizes="(max-width: 620px) 100vw, 888px"
+          />
         </ContentSection>
 
         {/* FAQ */}

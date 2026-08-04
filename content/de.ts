@@ -39,7 +39,7 @@ export const content = {
 
   sectionCompare: {
     soft: false,
-    h2: 'Was unterscheidet einen wissenschaftlichen Taschenrechner von einem einfachen Taschenrechner?',
+    h2: 'Wissenschaftlicher vs. einfacher Taschenrechner',
     intro:
       'Ein normaler Taschenrechner – der, der bereits auf deinem Smartphone installiert ist oder in einer Schreibtischschublade liegt – bietet nur sehr grundlegende Funktionen und vielleicht eine Prozent-Taste, die in verschiedenen Situationen kaum jemand richtig versteht. Das reicht für einfache Rechenaufgaben wie das Aufteilen einer Restaurantrechnung. Sobald jedoch ein komplexes oder fortgeschrittenes Problem gelöst werden muss, versagt er.',
     comparison: [
@@ -58,7 +58,7 @@ export const content = {
 
   sectionFunctions: {
     soft: true,
-    h2: 'Taschenrechner mit Wurzel, Pi und Klammern: Die Funktionen, auf die es ankommt',
+    h2: 'Funktionen: Wurzel, Pi, Brüche & Trigonometrie',
     intro:
       'Dies sind die Funktionen, bei denen die meisten einfachen Taschenrechner versagen, und hier sticht diese Spezialversion hervor.',
     subsections: [
@@ -87,7 +87,7 @@ export const content = {
 
   sectionWho: {
     soft: false,
-    h2: 'Wer profitiert eigentlich von einem solchen Online-Rechner?',
+    h2: 'Für wen ist der Online-Rechner geeignet?',
     highlights: [
       {
         h3: 'Schüler',
@@ -106,7 +106,7 @@ export const content = {
 
   sectionWhy: {
     soft: true,
-    h2: 'Warum ein kostenloser Online-Taschenrechner den Kauf eines physischen Geräts übertrifft',
+    h2: 'Online-Rechner statt Gerät kaufen: die Vorteile',
     paragraphs: [
       'Ein normaler wissenschaftlicher Taschenrechner kostet 20–40 €, und Modelle mit Grafikfunktion können bis zu 100 € kosten. Das machte 1998 noch Sinn. Dieses Tool bietet dir dieselben Kernfunktionen mit besseren Features. Es ist immer dabei, das Display ist größer und besser lesbar, und Updates erfolgen automatisch. Ein wichtiger Punkt, den du beachten solltest: Viele Schulen verlangen für Prüfungen nach wie vor ein zugelassenes physisches Gerät. Überprüfe also die Regeln deiner Schule, bevor du den Casio komplett abschreibst.',
     ],
@@ -124,7 +124,7 @@ export const content = {
   },
 
   faq: {
-    h2: 'FAQ',
+    h2: 'Häufige Fragen (FAQ)',
     items: [
       {
         q: 'Ist dieser Taschenrechner online kostenlos, oder gibt es versteckte Kosten?',
