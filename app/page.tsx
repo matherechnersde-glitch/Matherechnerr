@@ -25,8 +25,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-08-04T21:01:05+05:00',
-  dateModified: '2026-08-04T21:01:05+05:00',
+  datePublished: '2026-08-06T09:48:40+05:00',
+  dateModified: '2026-08-06T09:48:40+05:00',
 };
 
 const faqSchema = {
@@ -63,6 +63,14 @@ export default function HomePage() {
             <div className="intro-card">
               {hero.intro.map((p, i) => <p key={i}>{p}</p>)}
             </div>
+            <Image
+              className="intro-followup-image"
+              src="/Matherechner-online.webp"
+              alt="Matherechner online – kostenloser wissenschaftlicher Taschenrechner für Wurzeln, Brüche, Prozentrechnung und Trigonometrie"
+              width={195}
+              height={141}
+              sizes="(max-width: 620px) calc(100vw - 28px), 680px"
+            />
           </div>
         </section>
 

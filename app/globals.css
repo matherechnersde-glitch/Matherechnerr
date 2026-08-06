@@ -132,6 +132,17 @@ p {
   padding: 26px 28px 8px;
 }
 
+.intro-followup-image {
+  display: block;
+  width: min(100%, 680px);
+  height: auto;
+  margin: 26px auto 0;
+  border: 1px solid #dbe5f3;
+  border-radius: 14px;
+  background: #f8fafc;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
 .content-section {
   padding: 48px 20px;
   background: #fff;
