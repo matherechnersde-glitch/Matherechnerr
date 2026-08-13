@@ -162,6 +162,8 @@ export const content = {
       links: [
         { label: 'Startseite', href: '/' },
         { label: 'Taschenrechner', href: '/#matherechner-tool' },
+        { label: 'Prozentrechner', href: '/prozentrechner/' },
+        { label: 'Blog', href: '/blog/' },
         { label: 'Über uns', href: '/ueber-uns/' },
         { label: 'Kontakt', href: '/kontakt/' },
       ],
