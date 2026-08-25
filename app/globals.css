@@ -1886,9 +1886,10 @@ p {
 .inline-link { color: var(--blue); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .article-list { margin: 0 0 18px; padding-left: 22px; }.article-list li { margin: 10px 0; font-size: 17px; line-height: 1.7; }
 .formula-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0; }.formula-grid div { padding: 18px; border: 1px solid var(--border); border-radius: 9px; background: #f8fafc; text-align: center; line-height: 1.7; }.formula-grid strong { color: var(--blue); }
+.article-table-wrap { width: 100%; margin: 22px 0; overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; }.article-table { width: 100%; min-width: 560px; border-collapse: collapse; }.article-table th, .article-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }.article-table th { background: #edf6fe; color: #123b74; font-size: 14px; }.article-table tr:last-child td { border-bottom: 0; }.article-table code, .content-inner code { padding: 2px 6px; border-radius: 5px; background: #edf2f7; color: #123b74; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .92em; }.pi-formula-grid div { display: flex; min-height: 138px; flex-direction: column; justify-content: center; gap: 5px; }
 
 /* Blog */
-.blog-hero .page-shell { padding-bottom: 34px; }.blog-lead { max-width: 680px; margin: 22px auto 0; text-align: center; }.blog-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,560px)); max-width: 1180px; margin: 0 auto; }
+.blog-hero .page-shell { padding-bottom: 34px; }.blog-lead { max-width: 680px; margin: 22px auto 0; text-align: center; }.blog-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,560px)); gap: 24px; max-width: 1180px; margin: 0 auto; }
 .blog-card { overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: #fff; box-shadow: var(--card-shadow); transition: transform .2s ease, box-shadow .2s ease; }.blog-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(15,23,42,.11); }.blog-card-image { display: block; overflow: hidden; aspect-ratio: 1200/630; }.blog-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }.blog-card:hover .blog-card-image img { transform: scale(1.025); }.blog-card-body { padding: 24px; }.blog-card-category { display: inline-block; margin-bottom: 10px; color: var(--blue); font-size: 12px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }.blog-card h2 { margin-bottom: 12px; font-size: 25px; }.blog-card h2 a { text-decoration: none; }.blog-card-link { color: var(--blue); font-weight: 850; text-decoration: none; }
 
 @media (max-width: 620px) {
@@ -1929,3 +1930,26 @@ p {
 .gcalc-symbolic-history .gcalc-mathfield { min-height: 25px; font-size: 16px; pointer-events: none; }
 .gcalc-symbolic-history p { margin: 8px 0; font-size: 13px; }
 @media (max-width:620px) { .gcalc-mathfield { font-size: 22px; }.gcalc-result-field { font-size: 19px; }.gcalc-result-row { align-items: center; }.gcalc-result-actions { overflow-x: auto; flex-wrap: nowrap; }.gcalc-symbolic-history > button { grid-template-columns: 1fr; }.gcalc-symbolic-history > button > span { display: none; } }
+
+/* MathLive's standalone context menu bypasses the calculator engine. */
+.gcalc-mathfield::part(menu-toggle) { display: none; }
+
+/* Compact scientific calculator used only on the Pi article. */
+.pi-calculator { width: min(100%, 660px); margin: 26px auto 0; padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: #fff; box-shadow: 0 8px 24px rgba(15, 56, 92, .08); text-align: left; }
+.pi-calculator-input { width: 100%; min-height: 64px; border: 1px solid #cbd8e6; border-radius: 11px; background: #fff; padding: 12px 16px; color: var(--text); font: 600 25px/1.3 var(--font-inter), sans-serif; outline: none; }
+.pi-calculator-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(20, 110, 180, .12); }
+.pi-calculator-input::placeholder { color: #9aa8b7; font-size: 16px; font-weight: 500; }
+.pi-calculator-result { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 8px 4px 4px; color: var(--text); font-size: 21px; }
+.pi-calculator-hint { color: var(--muted); font-size: 14px; }
+.pi-calculator-error { color: #b42318; font-size: 14px; font-weight: 650; }
+.pi-calculator-keys { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-top: 8px; }
+.pi-calculator-key { min-height: 46px; border: 1px solid #d8e2ed; border-radius: 12px; background: #fff; color: var(--text); font: 650 16px var(--font-inter), sans-serif; cursor: pointer; transition: background .15s, border-color .15s, transform .08s; }
+.pi-calculator-key:hover { border-color: #b9cde0; background: #f7faff; }
+.pi-calculator-key:active { transform: scale(.96); }
+.pi-calculator-key:focus-visible { outline: 3px solid rgba(20, 110, 180, .25); outline-offset: 1px; }
+.pi-calculator-key--fn { background: var(--blue-soft); color: var(--blue); }
+.pi-calculator-key--op { background: #f2f5f8; }
+.pi-calculator-key--equal { border-color: var(--blue); background: var(--blue); color: #fff; }
+.pi-calculator-key--equal:hover { border-color: var(--blue); background: #0f5a96; }
+.pi-calculator .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 620px) { .pi-calculator { margin-top: 20px; padding: 12px; border-radius: 13px; }.pi-calculator-input { min-height: 56px; font-size: 21px; }.pi-calculator-keys { gap: 5px; }.pi-calculator-key { min-height: 42px; border-radius: 10px; font-size: 14px; } }

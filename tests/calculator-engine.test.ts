@@ -17,6 +17,9 @@ describe('symbolic calculator engine', () => {
     ['2\\pi+3\\pi', '5\\pi'],
   ])('%s gives exact %s', (input, output) => expect(exact(input)).toBe(output));
 
+  it('recognizes typed pi as the circle constant', () => {
+    expect(exact('pi*2')).toBe('2\\pi');
+  });
   it('solves linear and quadratic equations', () => {
     expect(exact('6x+5=14')).toContain('x=\\frac{3}{2}');
     const quadratic = exact('x^2-5x+6=0');

@@ -145,6 +145,9 @@ function detectVariable(cas: string): string {
 
 export function calculateLatex(latex: string, mode: AngleMode, action: ResultAction = 'auto'): MathResult {
   try {
+    // Normalize the documented typed constant before MathLive/Compute Engine
+    // can interpret the final i as the imaginary unit.
+    latex = latex.replace(/(^|[^a-z0-9\\])p\s*i(?=$|[^a-z])/gi, (_, prefix) => prefix + '\\pi');
     const percent = percentageRule(latex, mode);
     if (percent) return percent;
     const inverseTrig = latex.match(/^\\(arcsin|arccos|arctan)\((.+)\)$/i);
@@ -234,6 +237,23 @@ export function calculateLatex(latex: string, mode: AngleMode, action: ResultAct
     const expression = parse(latex);
     const json = expression.json;
     const cas = applyAngleMode(mathJsonToCas(json), mode);
+    // Keep ordinary arithmetic independent from the heavier symbolic CAS.
+    // This also makes the calculator resilient if Nerdamer has not finished
+    // loading in a browser yet. DEG trigonometry still uses its conversion.
+    const containsDegreeTrig = mode === 'deg' && /\\(?:sin|cos|tan|arcsin|arccos|arctan)/i.test(latex);
+    const requiresSymbolicCas = latex.includes('!') || /(^|[^a-z])i([^a-z]|$)/i.test(latex);
+    if (action === 'auto' && !containsDegreeTrig && !requiresSymbolicCas) {
+      const simplified = expression.simplify();
+      if (simplified.isNumber) {
+        const exactLatex = simplified.latex;
+        const decimalResult = decimalLatex(simplified);
+        return {
+          exactLatex,
+          decimalLatex: decimalResult && decimalResult !== exactLatex ? decimalResult : undefined,
+          operation: 'Exakt',
+        };
+      }
+    }
 
     if (Array.isArray(json) && json[0] === 'Equal') {
       const equation = mathJsonToCas(json);

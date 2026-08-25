@@ -72,6 +72,9 @@ export const StructuredMathField = forwardRef<StructuredMathFieldHandle, Props>(
       });
       hostRef.current.replaceChildren(field);
       fieldRef.current = field;
+      // MathLive exposes menuItems only after the custom element is mounted.
+      // Disable commands that bypass this calculator's validated engine.
+      field.menuItems = [];
     })();
     return () => { disposed = true; fieldRef.current = null; field?.remove(); };
   }, [ariaLabel, className, readOnly]);
