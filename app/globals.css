@@ -1953,3 +1953,25 @@ p {
 .pi-calculator-key--equal:hover { border-color: var(--blue); background: #0f5a96; }
 .pi-calculator .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 @media (max-width: 620px) { .pi-calculator { margin-top: 20px; padding: 12px; border-radius: 13px; }.pi-calculator-input { min-height: 56px; font-size: 21px; }.pi-calculator-keys { gap: 5px; }.pi-calculator-key { min-height: 42px; border-radius: 10px; font-size: 14px; } }
+/* Focused Modulo calculator */
+.modulo-calculator { width: min(100%, 720px); margin: 26px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
+.modulo-card { border: 1px solid #b8c7d8; border-radius: 14px; background: #fff; padding: 24px; box-shadow: 0 8px 22px rgba(15, 56, 92, .06); }
+.modulo-card h2 { margin: 0 0 20px; color: var(--text); font-size: 18px; text-align: left; }
+.modulo-card label, .modulo-result-label { display: block; margin: 0 0 8px; color: var(--text); font-size: 15px; font-weight: 700; }
+.modulo-card label:not(:first-of-type) { margin-top: 16px; }
+.modulo-card label span { color: var(--muted); font-weight: 500; }
+.modulo-card input, .modulo-card output { display: flex; align-items: center; width: 100%; min-height: 50px; border: 1px solid #cbd8e6; border-radius: 8px; background: #f9fbfe; padding: 10px 13px; color: var(--text); font: 650 19px var(--font-inter), sans-serif; outline: none; }
+.modulo-card input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(20, 110, 180, .12); background: #fff; }
+.modulo-card input::placeholder { color: #9aa8b7; font-size: 14px; font-weight: 500; }
+.modulo-result-card output { min-height: 64px; background: var(--blue-soft); color: var(--blue); font-size: 28px; }
+.modulo-result-card p { margin: 14px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; overflow-wrap: anywhere; }
+.modulo-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+.modulo-actions button { min-height: 46px; border-radius: 9px; padding: 10px 14px; font: 750 14px var(--font-inter), sans-serif; cursor: pointer; transition: transform .08s, background .15s, border-color .15s; }
+.modulo-actions button:active { transform: scale(.98); }
+.modulo-actions button:focus-visible { outline: 3px solid rgba(20, 110, 180, .25); outline-offset: 2px; }
+.modulo-primary { border: 1px solid var(--blue); background: var(--blue); color: #fff; }
+.modulo-primary:hover { background: #0f5a96; }
+.modulo-secondary { border: 1px solid #cbd8e6; background: #fff; color: var(--text); }
+.modulo-secondary:hover { border-color: var(--blue); color: var(--blue); }
+.modulo-error { margin: 12px 0 0; color: #b42318; font-size: 13px; font-weight: 650; }
+@media (max-width: 700px) { .modulo-calculator { grid-template-columns: 1fr; margin-top: 20px; gap: 10px; }.modulo-card { padding: 18px 14px; }.modulo-actions { grid-template-columns: 1fr; }.modulo-result-card output { min-height: 56px; font-size: 24px; } }

@@ -19,8 +19,8 @@ const webPageSchema = {
   '@type': 'WebPage',
   name: 'Allgemeine Geschäftsbedingungen',
   url: content.site.url + '/agb/',
-  datePublished: '2026-08-26T23:59:59+05:00',
-  dateModified: '2026-08-26T23:59:59+05:00',
+  datePublished: '2026-08-28T23:59:59+05:00',
+  dateModified: '2026-08-28T23:59:59+05:00',
 };
 
 export default function AgbPage() {
