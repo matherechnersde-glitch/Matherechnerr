@@ -9,7 +9,7 @@ import { content } from '@/content/de';
 const title = 'HOAI Rechner';
 const metaTitle = 'HOAI Rechner 2026';
 const description = 'Mit dem HOAI Rechner ermittelst du Honorare für Gebäude und Innenräume nach HOAI 2021 – mit Honorarzone, Leistungsphasen und Nebenkosten.';
-const updated = '2026-09-04T23:59:59+05:00';
+const updated = '2026-09-05T23:59:59+05:00';
 const canonical = '/hoai-rechner/';
 const image = '/hoai-rechner.webp';
 

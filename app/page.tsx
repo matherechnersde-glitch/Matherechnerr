@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { content } from '@/content/de';
 import Calculator from '@/components/CalculatorNew';
 
@@ -25,8 +26,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-09-04T23:59:59+05:00',
-  dateModified: '2026-09-04T23:59:59+05:00',
+  datePublished: '2026-09-05T23:59:59+05:00',
+  dateModified: '2026-09-05T23:59:59+05:00',
 };
 
 const faqSchema = {
@@ -85,6 +86,12 @@ export default function HomePage() {
         <ContentSection soft={sectionFunctions.soft} h2={sectionFunctions.h2}>
           <p>{sectionFunctions.intro}</p>
           <HighlightGrid items={sectionFunctions.subsections} variant="features" />
+          <p style={{ marginTop: '18px' }}>
+            Für spezielle Aufgaben kannst du Prozentwerte mit dem{' '}
+            <Link href="/prozentrechner/">Prozentrechner</Link> bestimmen, Funktionen mit dem{' '}
+            <Link href="/ableitungsrechner/">Ableitungsrechner</Link> differenzieren und Stammfunktionen mit dem{' '}
+            <Link href="/integralrechner/">Integralrechner</Link> berechnen.
+          </p>
         </ContentSection>
 
         {/* Wer profitiert */}
