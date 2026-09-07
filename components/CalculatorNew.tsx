@@ -16,6 +16,7 @@ export default function CalculatorNew() {
   const [decimal, setDecimal] = useState(false);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [keyboardGuideVisible, setKeyboardGuideVisible] = useState(true);
   const inputRef = useRef<StructuredMathFieldHandle>(null);
 
   useEffect(() => { try { setHistory(JSON.parse(localStorage.getItem('matherechner-history') || '[]')); } catch {} }, []);
@@ -51,8 +52,16 @@ export default function CalculatorNew() {
   return <div className="gcalc" id="matherechner-tool">
     <div className="gcalc-display">
       <div className="gcalc-expr-row">
-        <StructuredMathField ref={inputRef} value={latex} ariaLabel="Mathematischen Ausdruck eingeben" onInput={value => { setLatex(value); setResult(null); setError(''); }} onEnter={() => calculate()} onEscape={() => { setError(''); }} />
+        <StructuredMathField ref={inputRef} value={latex} ariaLabel="Mathematischen Ausdruck eingeben" onInput={value => { setLatex(value); setResult(null); setError(''); if (value) setKeyboardGuideVisible(false); }} onEnter={() => calculate()} onEscape={() => { setError(''); }} />
       </div>
+      {keyboardGuideVisible && <div className="gcalc-keyboard-guide">
+        <button type="button" className="gcalc-keyboard-guide-main" onClick={() => { inputRef.current?.showKeyboard(); setKeyboardGuideVisible(false); }} aria-label="Mathematische Tastatur für weitere Funktionen öffnen">
+          <span className="gcalc-keyboard-guide-icon" aria-hidden="true">⌨</span>
+          <span><strong>Mehr Mathe-Funktionen</strong><small>Tastatur öffnen für Brüche, Wurzeln &amp; mehr</small></span>
+          <span className="gcalc-keyboard-guide-arrow" aria-hidden="true">↗</span>
+        </button>
+        <button type="button" className="gcalc-keyboard-guide-close" onClick={() => setKeyboardGuideVisible(false)} aria-label="Hinweis schließen">×</button>
+      </div>}
       {error && <div className="gcalc-error" role="alert">{error}</div>}
       {result && <div className="gcalc-result-row">
         <span className="gcalc-eq-sign">=</span>

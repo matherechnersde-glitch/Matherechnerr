@@ -17,7 +17,7 @@ export default function Header({ content }: { content: HeaderContent }) {
           <Link href="/">Matherechner</Link>
           <div className="nav-dropdown">
             <button className="nav-dropdown-trigger" type="button" aria-haspopup="true">Rechner <span aria-hidden="true">⌄</span></button>
-            <div className="nav-dropdown-menu"><Link href="/prozentrechner/">Prozentrechner</Link><Link href="/matherechner-pi/">Matherechner Pi</Link><Link href="/matherechner-modulo/">Modulo</Link><Link href="/hoai-rechner/">HOAI</Link><Link href="/ableitungsrechner/">Ableitungsrechner</Link><Link href="/integralrechner/">Integralrechner</Link></div>
+            <div className="nav-dropdown-menu"><Link href="/prozentrechner/">Prozentrechner</Link><Link href="/matherechner-pi/">Matherechner Pi</Link><Link href="/matherechner-modulo/">Modulo</Link><Link href="/hoai-rechner/">HOAI</Link><Link href="/ableitungsrechner/">Ableitungsrechner</Link><Link href="/integralrechner/">Integralrechner</Link><Link href="/pythagoras-rechner/">Pythagoras Rechner</Link></div>
           </div>
           <Link href="/blog/">Blog</Link>
           {content.navLinks.filter((link) => link.href !== '/').map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}

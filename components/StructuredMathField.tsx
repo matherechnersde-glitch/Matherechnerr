@@ -10,6 +10,7 @@ export interface StructuredMathFieldHandle {
   clear(): void;
   backspace(): void;
   focus(): void;
+  showKeyboard(): void;
 }
 
 interface Props {
@@ -46,6 +47,13 @@ export const StructuredMathField = forwardRef<StructuredMathFieldHandle, Props>(
     clear() { if (fieldRef.current) clearMathField(fieldRef.current); },
     backspace() { if (fieldRef.current) deleteMathUnit(fieldRef.current); },
     focus() { fieldRef.current?.focus(); },
+    showKeyboard() {
+      const field = fieldRef.current;
+      if (!field) return;
+      field.focus();
+      const keyboard = (window as Window & { mathVirtualKeyboard?: { show?: () => void } }).mathVirtualKeyboard;
+      keyboard?.show?.();
+    },
   }), []);
 
   useEffect(() => {
