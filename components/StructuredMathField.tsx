@@ -1,7 +1,7 @@
 'use client';
 
 import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
-import { clearMathField, deleteMathUnit, handleMathKey, insertMathTemplate } from '@/lib/mathfield-commands';
+import { clearMathField, deleteMathUnit } from '@/lib/mathfield-commands';
 
 export interface StructuredMathFieldHandle {
   insert(latex: string): void;
@@ -11,6 +11,7 @@ export interface StructuredMathFieldHandle {
   backspace(): void;
   focus(): void;
   showKeyboard(): void;
+  hideKeyboard(): void;
 }
 
 interface Props {
@@ -21,19 +22,29 @@ interface Props {
   onInput?: (latex: string) => void;
   onEnter?: () => void;
   onEscape?: () => void;
+  onVirtualKeyboardChange?: (visible: boolean, height: number) => void;
 }
 
+type MathKeyboard = EventTarget & {
+  visible: boolean;
+  boundingRect?: DOMRect;
+  show(options?: { animate: boolean }): void;
+  hide(options?: { animate: boolean }): void;
+};
+
 export const StructuredMathField = forwardRef<StructuredMathFieldHandle, Props>(function StructuredMathField(
-  { value = '', readOnly = false, ariaLabel, className = '', onInput, onEnter, onEscape }, ref,
+  { value = '', readOnly = false, ariaLabel, className = '', onInput, onEnter, onEscape, onVirtualKeyboardChange }, ref,
 ) {
   const hostRef = useRef<HTMLDivElement>(null);
   const fieldRef = useRef<any>(null);
   const inputCallback = useRef(onInput);
   const enterCallback = useRef(onEnter);
   const escapeCallback = useRef(onEscape);
+  const virtualKeyboardCallback = useRef(onVirtualKeyboardChange);
   inputCallback.current = onInput;
   enterCallback.current = onEnter;
   escapeCallback.current = onEscape;
+  virtualKeyboardCallback.current = onVirtualKeyboardChange;
 
   useImperativeHandle(ref, () => ({
     insert(latex) {
@@ -48,22 +59,28 @@ export const StructuredMathField = forwardRef<StructuredMathFieldHandle, Props>(
     backspace() { if (fieldRef.current) deleteMathUnit(fieldRef.current); },
     focus() { fieldRef.current?.focus(); },
     showKeyboard() {
-      const field = fieldRef.current;
-      if (!field) return;
-      field.focus();
-      const keyboard = (window as Window & { mathVirtualKeyboard?: { show?: () => void } }).mathVirtualKeyboard;
-      keyboard?.show?.();
+      fieldRef.current?.focus();
+      const keyboard = (window as Window & { mathVirtualKeyboard?: MathKeyboard }).mathVirtualKeyboard;
+      keyboard?.show({ animate: true });
+    },
+    hideKeyboard() {
+      const keyboard = (window as Window & { mathVirtualKeyboard?: MathKeyboard }).mathVirtualKeyboard;
+      keyboard?.hide({ animate: true });
     },
   }), []);
 
   useEffect(() => {
     let disposed = false;
     let field: any;
+    let keyboard: MathKeyboard | undefined;
+    let handleKeyboardChange: (() => void) | undefined;
+
     (async () => {
       const { MathfieldElement } = await import('mathlive');
       if (disposed || !hostRef.current) return;
       MathfieldElement.fontsDirectory = '/mathlive-fonts';
       MathfieldElement.soundsDirectory = null;
+      keyboard = (window as Window & { mathVirtualKeyboard?: MathKeyboard }).mathVirtualKeyboard;
       field = new MathfieldElement();
       field.className = `gcalc-mathfield ${className}`.trim();
       field.setAttribute('aria-label', ariaLabel);
@@ -83,8 +100,24 @@ export const StructuredMathField = forwardRef<StructuredMathFieldHandle, Props>(
       // MathLive exposes menuItems only after the custom element is mounted.
       // Disable commands that bypass this calculator's validated engine.
       field.menuItems = [];
+
+      if (!readOnly && keyboard && virtualKeyboardCallback.current) {
+        handleKeyboardChange = () => virtualKeyboardCallback.current?.(keyboard?.visible ?? false, Number(keyboard?.boundingRect?.height || 0));
+        keyboard.addEventListener('virtual-keyboard-toggle', handleKeyboardChange);
+        keyboard.addEventListener('geometrychange', handleKeyboardChange);
+        handleKeyboardChange();
+      }
     })();
-    return () => { disposed = true; fieldRef.current = null; field?.remove(); };
+
+    return () => {
+      disposed = true;
+      if (keyboard && handleKeyboardChange) {
+        keyboard.removeEventListener('virtual-keyboard-toggle', handleKeyboardChange);
+        keyboard.removeEventListener('geometrychange', handleKeyboardChange);
+      }
+      fieldRef.current = null;
+      field?.remove();
+    };
   }, [ariaLabel, className, readOnly]);
 
   useEffect(() => {

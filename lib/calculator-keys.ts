@@ -34,7 +34,7 @@ export const COMMON: Key[][] = [
   [{ label: '7', aria: 'Sieben', insert: '7' }, { label: '8', aria: 'Acht', insert: '8' }, { label: '9', aria: 'Neun', insert: '9' }, { label: '÷', aria: 'Division', insert: '\\div', variant: 'op' }],
   [{ label: '4', aria: 'Vier', insert: '4' }, { label: '5', aria: 'Fünf', insert: '5' }, { label: '6', aria: 'Sechs', insert: '6' }, { label: '×', aria: 'Multiplikation', insert: '\\times', variant: 'op' }],
   [{ label: '1', aria: 'Eins', insert: '1' }, { label: '2', aria: 'Zwei', insert: '2' }, { label: '3', aria: 'Drei', insert: '3' }, { label: '−', aria: 'Subtraktion', insert: '-', variant: 'op' }],
-  [{ label: '0', aria: 'Null', insert: '0' }, { label: ',', aria: 'Dezimaltrennzeichen', insert: '.' }, { label: '▶', aria: 'Berechnen', action: 'calculate', variant: 'calc' }, { label: '+', aria: 'Addition', insert: '+', variant: 'op' }],
+  [{ label: '0', aria: 'Null', insert: '0' }, { label: ',', aria: 'Dezimaltrennzeichen', insert: '.' }, { label: '=', aria: 'Ergebnis berechnen', action: 'calculate', variant: 'calc' }, { label: '+', aria: 'Addition', insert: '+', variant: 'op' }],
 ];
 
 export const CALCULATOR_KEYS = { algebra: ALGEBRA, trig: TRIG, calculus: CALCULUS, common: COMMON };

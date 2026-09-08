@@ -17,6 +17,7 @@ export default function CalculatorNew() {
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [keyboardGuideVisible, setKeyboardGuideVisible] = useState(true);
+  const [virtualKeyboard, setVirtualKeyboard] = useState({ visible: false, height: 0 });
   const inputRef = useRef<StructuredMathFieldHandle>(null);
 
   useEffect(() => { try { setHistory(JSON.parse(localStorage.getItem('matherechner-history') || '[]')); } catch {} }, []);
@@ -52,7 +53,7 @@ export default function CalculatorNew() {
   return <div className="gcalc" id="matherechner-tool">
     <div className="gcalc-display">
       <div className="gcalc-expr-row">
-        <StructuredMathField ref={inputRef} value={latex} ariaLabel="Mathematischen Ausdruck eingeben" onInput={value => { setLatex(value); setResult(null); setError(''); if (value) setKeyboardGuideVisible(false); }} onEnter={() => calculate()} onEscape={() => { setError(''); }} />
+        <StructuredMathField ref={inputRef} value={latex} ariaLabel="Mathematischen Ausdruck eingeben" onInput={value => { setLatex(value); setResult(null); setError(''); if (value) setKeyboardGuideVisible(false); }} onVirtualKeyboardChange={(visible, height) => setVirtualKeyboard({ visible, height })} onEnter={() => calculate()} onEscape={() => { setError(''); }} />
       </div>
       {keyboardGuideVisible && <div className="gcalc-keyboard-guide">
         <button type="button" className="gcalc-keyboard-guide-main" onClick={() => { inputRef.current?.showKeyboard(); setKeyboardGuideVisible(false); }} aria-label="Mathematische Tastatur für weitere Funktionen öffnen">
@@ -79,6 +80,10 @@ export default function CalculatorNew() {
 
     <div className="gcalc-sugg"><div className="gcalc-cards">{EXAMPLES.map(example => <button type="button" className="gcalc-card" key={example.label} onClick={() => { inputRef.current?.setValue(example.latex); setLatex(example.latex); setResult(null); setError(''); inputRef.current?.focus(); }}><span className="gcalc-card-lbl">{example.label}</span><span className="gcalc-card-expr">{example.display}</span></button>)}</div><button type="button" className="gcalc-expand-btn" aria-label="Berechnungsverlauf öffnen" onClick={() => setHistoryOpen(v => !v)}>↺</button></div>
 
+    {virtualKeyboard.visible && <div className="gcalc-vk-answer" style={{ bottom: `${Math.max(virtualKeyboard.height, 220) + 12}px` }}>
+      <button type="button" onClick={() => { calculate(); inputRef.current?.hideKeyboard(); }} aria-label="Ausdruck berechnen und Ergebnis anzeigen"><span aria-hidden="true">=</span> Ergebnis anzeigen</button>
+      <small>oder Enter drücken</small>
+    </div>}
     {historyOpen && <div className="gcalc-symbolic-history"><div className="gcalc-history-head"><strong>Verlauf</strong><button type="button" onClick={() => { setHistory([]); localStorage.removeItem('matherechner-history'); }}>Löschen</button></div>{history.length ? history.map((entry,index) => <button type="button" key={`${entry.latex}-${index}`} onClick={() => { inputRef.current?.setValue(entry.latex); setLatex(entry.latex); setResult({ exactLatex: entry.exactLatex, decimalLatex: entry.decimalLatex, operation: entry.operation }); setAngleMode(entry.angleMode); }}><StructuredMathField value={entry.latex} readOnly ariaLabel="Gespeicherter Ausdruck" /><span>=</span><StructuredMathField value={entry.exactLatex} readOnly ariaLabel="Gespeichertes Ergebnis" /></button>) : <p>Noch keine Berechnungen.</p>}</div>}
   </div>;
 }
