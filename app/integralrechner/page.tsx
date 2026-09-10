@@ -9,7 +9,7 @@ import { content } from '@/content/de';
 const title = 'Integralrechner';
 const metaTitle = 'Integralrechner: Stammfunktion & Integral berechnen';
 const description = 'Integralrechner einfach erklärt: Stammfunktion, bestimmtes und unbestimmtes Integral, Integrationsregeln und Flächenberechnung mit Rechenweg verständlich gemacht.';
-const updated = '2026-09-08T23:59:59+05:00';
+const updated = '2026-09-10T23:59:59+05:00';
 const canonical = '/integralrechner/';
 const image = '/Integralrechner.webp';
 
