@@ -17,8 +17,8 @@ export default function Footer({ content }: { content: FooterContent }) {
             src="/Matherechnerr-logo.webp"
             alt="Matherechner – Online-Taschenrechner"
             className="site-logo site-logo--footer"
-            width="1922"
-            height="818"
+            width="400"
+            height="170"
             loading="lazy"
             decoding="async"
           />
@@ -28,7 +28,7 @@ export default function Footer({ content }: { content: FooterContent }) {
         <div className="footer-col">
           <h3>{content.pagesNav.h3}</h3>
           {content.pagesNav.links.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link prefetch={false} key={link.href} href={link.href}>
               {link.label}
             </Link>
           ))}
@@ -37,7 +37,7 @@ export default function Footer({ content }: { content: FooterContent }) {
         <div className="footer-col">
           <h3>{content.legalNav.h3}</h3>
           {content.legalNav.links.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link prefetch={false} key={link.href} href={link.href}>
               {link.label}
             </Link>
           ))}
@@ -46,7 +46,7 @@ export default function Footer({ content }: { content: FooterContent }) {
 
       <div className="footer-bottom">
         {content.bottomLinks.map((link) => (
-          <Link key={link.href} href={link.href}>{link.label}</Link>
+          <Link prefetch={false} key={link.href} href={link.href}>{link.label}</Link>
         ))}
         <span>{content.copyright}</span>
       </div>

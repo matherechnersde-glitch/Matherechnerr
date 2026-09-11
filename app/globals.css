@@ -1,4 +1,5 @@
 :root {
+  --font-inter: "Segoe UI", Arial, Helvetica, sans-serif;
   --blue: #146EB4;
   --blue-dark: #146EB4;
   --blue-soft: #eef2ff;
@@ -2032,6 +2033,6 @@ p {
 @media(max-width:700px){.fraction-calculator{margin-top:20px;border-radius:13px}.fraction-head{padding:16px 14px}.fraction-head>strong{display:none}.fraction-body{padding:17px 14px}.fraction-expression{grid-template-columns:1fr 46px 1fr;gap:8px}.fraction-equals{display:none}.fraction-preview{grid-column:1/-1;grid-template-columns:1fr 60px 1fr;grid-template-rows:1fr;min-height:62px}.fraction-preview i{width:60px}.fraction-operation small{display:none}.fraction-operation-tabs{grid-template-columns:1fr 1fr;gap:6px;margin-top:16px}.fraction-actions{grid-template-columns:1fr}.fraction-result-cards{grid-template-columns:1fr}.fraction-output{padding:17px 14px}}
 /* Mobile performance: deferred calculator shell and below-fold containment */
 .gcalc-deferred-input{width:100%;min-width:0;min-height:44px;border:0;outline:0;background:transparent;padding:0 48px 0 0;color:#202124;font:500 27px/1.35 KaTeX_Main,KaTeX_Math,"Cambria Math",Georgia,serif}.gcalc-deferred-keyboard{position:absolute;right:4px;top:50%;display:grid;place-items:center;width:38px;height:38px;transform:translateY(-50%);border:1px solid #b7d4ee;border-radius:8px;background:#fff;color:var(--blue);font-size:18px;cursor:pointer;box-shadow:0 0 0 2px rgba(20,110,180,.14)}.gcalc-deferred-status{position:absolute;right:25px;bottom:3px;color:var(--muted);font-size:10px}.gcalc-deferred .gcalc-display{position:relative}.gcalc-deferred .gcalc-keyboard-guide-close{display:none}.content-section{content-visibility:auto;contain-intrinsic-size:auto 620px}
-@media(max-width:620px){.site-header{backdrop-filter:none}.gcalc-deferred-input{min-height:38px;font-size:22px}.gcalc-deferred-keyboard{right:1px;width:35px;height:35px}.content-section{contain-intrinsic-size:auto 760px}}
+@media(max-width:620px){.site-header{backdrop-filter:none}.gcalc-keyboard-guide-arrow,.gcalc-deferred-keyboard{animation:none}.gcalc-deferred-input{min-height:38px;font-size:22px}.gcalc-deferred-keyboard{right:1px;width:35px;height:35px}.content-section{contain-intrinsic-size:auto 760px}}
 /* Final mobile navigation cascade correction: keep the menu collapsed until the hamburger is activated. */
 @media(max-width:620px){.header-nav{display:none}.nav-toggle:checked~.header-nav{display:flex}}

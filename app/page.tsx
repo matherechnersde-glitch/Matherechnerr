@@ -88,9 +88,9 @@ export default function HomePage() {
           <HighlightGrid items={sectionFunctions.subsections} variant="features" />
           <p style={{ marginTop: '18px' }}>
             Für spezielle Aufgaben kannst du Prozentwerte mit dem{' '}
-            <Link href="/prozentrechner/">Prozentrechner</Link> bestimmen, Funktionen mit dem{' '}
-            <Link href="/ableitungsrechner/">Ableitungsrechner</Link> differenzieren und Stammfunktionen mit dem{' '}
-            <Link href="/integralrechner/">Integralrechner</Link> berechnen.
+            <Link href="/prozentrechner/" prefetch={false}>Prozentrechner</Link> bestimmen, Funktionen mit dem{' '}
+            <Link href="/ableitungsrechner/" prefetch={false}>Ableitungsrechner</Link> differenzieren und Stammfunktionen mit dem{' '}
+            <Link href="/integralrechner/" prefetch={false}>Integralrechner</Link> berechnen.
           </p>
         </ContentSection>
 
