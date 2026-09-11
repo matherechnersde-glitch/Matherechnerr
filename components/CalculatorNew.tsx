@@ -7,9 +7,11 @@ import { StructuredMathField, type StructuredMathFieldHandle } from './Structure
 import { COMMON, EXAMPLES, FUNCTIONS, type Key, type Tab } from '@/lib/calculator-keys';
 type HistoryEntry = { latex: string; exactLatex: string; decimalLatex?: string; angleMode: AngleMode; operation: string };
 
-export default function CalculatorNew() {
-  const [tab, setTab] = useState<Tab>('algebra');
-  const [latex, setLatex] = useState('');
+interface CalculatorNewProps { initialLatex?: string; initialTab?: Tab; calculateOnMount?: boolean }
+
+export default function CalculatorNew({ initialLatex = '', initialTab = 'algebra', calculateOnMount = false }: CalculatorNewProps) {
+  const [tab, setTab] = useState<Tab>(initialTab);
+  const [latex, setLatex] = useState(initialLatex);
   const [result, setResult] = useState<MathResult | null>(null);
   const [error, setError] = useState('');
   const [angleMode, setAngleMode] = useState<AngleMode>('deg');
@@ -21,6 +23,7 @@ export default function CalculatorNew() {
   const inputRef = useRef<StructuredMathFieldHandle>(null);
 
   useEffect(() => { try { setHistory(JSON.parse(localStorage.getItem('matherechner-history') || '[]')); } catch {} }, []);
+  useEffect(() => { if (calculateOnMount && initialLatex) calculate(); }, []); // Run only when the deferred shell handed off an Enter/calculate action.
   const saveHistory = useCallback((entry: HistoryEntry) => {
     setHistory(old => { const next = [entry, ...old].slice(0, 20); localStorage.setItem('matherechner-history', JSON.stringify(next)); return next; });
   }, []);

@@ -9,7 +9,7 @@ export default function Header({ content }: { content: HeaderContent }) {
     <header className="site-header">
       <div className="header-inner">
         <Link className="brand" href="/">
-          <img src="/Matherechnerr-logo.webp" alt="Matherechner – kostenloser Online-Taschenrechner" className="site-logo site-logo--header" loading="eager" />
+          <img src="/Matherechnerr-logo.webp" alt="Matherechner – kostenloser Online-Taschenrechner" className="site-logo site-logo--header" width="1922" height="818" loading="eager" fetchPriority="high" decoding="async" />
         </Link>
         <input type="checkbox" id="nav-toggle" className="nav-toggle" aria-hidden="true" />
         <label htmlFor="nav-toggle" className="hamburger" aria-label="Navigation öffnen"><span></span><span></span><span></span></label>

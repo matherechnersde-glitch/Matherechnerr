@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { content } from '@/content/de';
-import Calculator from '@/components/CalculatorNew';
+import Calculator from '@/components/DeferredCalculator';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },

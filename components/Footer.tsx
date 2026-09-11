@@ -17,7 +17,10 @@ export default function Footer({ content }: { content: FooterContent }) {
             src="/Matherechnerr-logo.webp"
             alt="Matherechner – Online-Taschenrechner"
             className="site-logo site-logo--footer"
+            width="1922"
+            height="818"
             loading="lazy"
+            decoding="async"
           />
           <p>{content.tagline}</p>
         </div>
