@@ -75,20 +75,20 @@ export default function DatenschutzPage() {
           Soweit wir personenbezogene Daten verarbeiten, erfolgt dies auf Basis folgender Rechtsgrundlagen:
         </p>
         <ul className="feature-list" style={{ gridTemplateColumns: '1fr', marginBottom: '14px' }}>
-          <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> – Verarbeitung zur Durchführung vorvertraglicher Maßnahmen bzw. zur Erfüllung eines Vertrags (z. B. bei Kontaktanfragen)</li>
-          <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> – Verarbeitung zur Wahrung berechtigter Interessen des Betreibers (z. B. technisch notwendiger lokaler Speicher des Rechners)</li>
+          <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong>: Verarbeitung zur Durchführung vorvertraglicher Maßnahmen bzw. zur Erfüllung eines Vertrags (z. B. bei Kontaktanfragen)</li>
+          <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong>: Verarbeitung zur Wahrung berechtigter Interessen des Betreibers (z. B. technisch notwendiger lokaler Speicher des Rechners)</li>
         </ul>
       </ContentSection>
 
       <ContentSection soft={true} h2="Ihre Rechte nach der DSGVO">
         <p>Als betroffene Person haben Sie gegenüber uns folgende Rechte:</p>
         <ul className="feature-list" style={{ gridTemplateColumns: '1fr', marginBottom: '14px' }}>
-          <li><strong>Auskunftsrecht (Art. 15 DSGVO)</strong> – Sie können Auskunft über die zu Ihrer Person gespeicherten Daten verlangen.</li>
-          <li><strong>Berichtigungsrecht (Art. 16 DSGVO)</strong> – Sie können die Berichtigung unrichtiger Daten verlangen.</li>
-          <li><strong>Recht auf Löschung (Art. 17 DSGVO)</strong> – Sie können unter bestimmten Voraussetzungen die Löschung Ihrer Daten verlangen.</li>
-          <li><strong>Recht auf Einschränkung (Art. 18 DSGVO)</strong> – Sie können die Einschränkung der Verarbeitung verlangen.</li>
-          <li><strong>Widerspruchsrecht (Art. 21 DSGVO)</strong> – Sie können der Verarbeitung Ihrer Daten widersprechen.</li>
-          <li><strong>Beschwerderecht</strong> – Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
+          <li><strong>Auskunftsrecht (Art. 15 DSGVO)</strong>: Sie können Auskunft über die zu Ihrer Person gespeicherten Daten verlangen.</li>
+          <li><strong>Berichtigungsrecht (Art. 16 DSGVO)</strong>: Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+          <li><strong>Recht auf Löschung (Art. 17 DSGVO)</strong>: Sie können unter bestimmten Voraussetzungen die Löschung Ihrer Daten verlangen.</li>
+          <li><strong>Recht auf Einschränkung (Art. 18 DSGVO)</strong>: Sie können die Einschränkung der Verarbeitung verlangen.</li>
+          <li><strong>Widerspruchsrecht (Art. 21 DSGVO)</strong>: Sie können der Verarbeitung Ihrer Daten widersprechen.</li>
+          <li><strong>Beschwerderecht</strong>: Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
         </ul>
         <p>
           Zur Wahrnehmung Ihrer Rechte wenden Sie sich bitte über die{' '}

@@ -25,7 +25,7 @@ const channels = [
   },
   {
     h3: 'Technischer Support',
-    p: 'Haben Sie einen Rechenfehler entdeckt oder funktioniert etwas nicht wie erwartet? Beschreiben Sie das Problem so genau wie möglich – wir kümmern uns darum.',
+    p: 'Haben Sie einen Rechenfehler entdeckt oder funktioniert etwas nicht wie erwartet? Beschreiben Sie das Problem so genau wie möglich: wir kümmern uns darum.',
   },
 ];
 
@@ -40,7 +40,7 @@ export default function KontaktPage() {
 
       <ContentSection soft={false} h2="So erreichen Sie uns">
         <p>
-          Wir freuen uns über Ihre Nachricht – egal ob Feedback, Fehlerhinweis, Kooperationsanfrage oder Frage zum Datenschutz. Nutzen Sie das Formular weiter unten oder senden Sie uns eine E-Mail. Wir antworten in der Regel innerhalb von 1–3 Werktagen.
+          Wir freuen uns über Ihre Nachricht: egal ob Feedback, Fehlerhinweis, Kooperationsanfrage oder Frage zum Datenschutz. Nutzen Sie das Formular weiter unten oder senden Sie uns eine E-Mail. Wir antworten in der Regel innerhalb von 1-3 Werktagen.
         </p>
         <HighlightGrid items={channels} />
       </ContentSection>
@@ -58,7 +58,7 @@ export default function KontaktPage() {
         <p>
           Bevor Sie uns kontaktieren, lohnt sich möglicherweise ein Blick in unsere{' '}
           <a href="/#faq" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>FAQ-Sektion</a>{' '}
-          auf der Startseite – viele häufige Fragen zur Nutzung des Taschenrechners sind dort bereits beantwortet.
+          auf der Startseite: viele häufige Fragen zur Nutzung des Taschenrechners sind dort bereits beantwortet.
         </p>
       </ContentSection>
     </main>

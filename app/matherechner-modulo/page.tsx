@@ -8,7 +8,7 @@ import { content } from '@/content/de';
 
 const title = 'Matherechner Modulo';
 const metaTitle = 'Matherechner Modulo 2026';
-const description = 'Mit dem Matherechner Modulo berechnest du den Rest einer Division schnell, korrekt und direkt online – inklusive verständlicher Beispiele.';
+const description = 'Mit dem Matherechner Modulo berechnest du den Rest einer Division schnell, korrekt und direkt online: inklusive verständlicher Beispiele.';
 const updated = '2026-09-15T23:59:59+05:00';
 const canonical = '/matherechner-modulo/';
 const image = '/matherechner-modulo.webp';
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical },
   openGraph: {
     type: 'article', url: canonical, title: metaTitle, description,
-    images: [{ url: image, width: 1200, height: 630, alt: 'Matherechner Modulo – den Rest einer Division berechnen' }],
+    images: [{ url: image, width: 1200, height: 630, alt: 'Matherechner Modulo: den Rest einer Division berechnen' }],
     publishedTime: updated, modifiedTime: updated,
   },
   twitter: { card: 'summary_large_image', title: metaTitle, description, images: [image] },
@@ -98,7 +98,7 @@ export default function MatherechnerModuloPage() {
 
       <ContentSection h2="Modulo bei Uhrzeiten und Wochentagen">
         <p>Eine Uhr wiederholt sich alle 24 Stunden. Deshalb lässt sich eine Uhrzeit mit Modulo in den gültigen Bereich zurückführen. 29 Uhr entspricht <strong>29 mod 24 = 5 Uhr</strong>. Bei einer 12-Stunden-Uhr ergibt 17 mod 12 den Wert 5.</p>
-        <p>Dasselbe Prinzip gilt für Wochentage. Nach sieben Tagen beginnt die Folge erneut. Liegt ein Termin zehn Tage nach Montag, sind 10 mod 7 gleich 3 zusätzliche Tage – der Termin fällt auf Donnerstag.</p>
+        <p>Dasselbe Prinzip gilt für Wochentage. Nach sieben Tagen beginnt die Folge erneut. Liegt ein Termin zehn Tage nach Montag, sind 10 mod 7 gleich 3 zusätzliche Tage: der Termin fällt auf Donnerstag.</p>
       </ContentSection>
 
       <ContentSection soft h2="Gerade und ungerade Zahlen prüfen">

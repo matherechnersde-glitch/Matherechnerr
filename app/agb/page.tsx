@@ -73,7 +73,7 @@ export default function AgbPage() {
 
       <ContentSection soft={true} h2="§ 4 Urheberrecht und geistiges Eigentum">
         <p>
-          Sämtliche Inhalte dieser Website – einschließlich Texte, Grafiken, Code und Design – sind urheberrechtlich geschützt. Eine Vervielfältigung, Verbreitung oder öffentliche Wiedergabe ohne vorherige schriftliche Genehmigung des Betreibers ist untersagt.
+          Sämtliche Inhalte dieser Website: einschließlich Texte, Grafiken, Code und Design: sind urheberrechtlich geschützt. Eine Vervielfältigung, Verbreitung oder öffentliche Wiedergabe ohne vorherige schriftliche Genehmigung des Betreibers ist untersagt.
         </p>
         <p>
           Der Taschenrechner verwendet die Open-Source-Bibliothek <strong>math.js</strong> (Apache-2.0-Lizenz) sowie die Schriftart <strong>Inter</strong> (SIL Open Font License). Die Lizenzangaben dieser Drittanbieter bleiben unberührt.
@@ -82,7 +82,7 @@ export default function AgbPage() {
 
       <ContentSection soft={false} h2="§ 5 Unzulässige Nutzung">
         <p>
-          Die missbräuchliche Nutzung der Website – insbesondere durch automatisierte Massenanfragen (Bots, Scraper), das gezielte Herbeiführen von Serverausfällen oder der Versuch, in die technische Infrastruktur einzudringen – ist untersagt und kann rechtliche Konsequenzen haben.
+          Die missbräuchliche Nutzung der Website: insbesondere durch automatisierte Massenanfragen (Bots, Scraper), das gezielte Herbeiführen von Serverausfällen oder der Versuch, in die technische Infrastruktur einzudringen: ist untersagt und kann rechtliche Konsequenzen haben.
         </p>
       </ContentSection>
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.description,
-    images: [{ url: site.ogImage, width: 1200, height: 630, alt: 'Matherechner – kostenloser wissenschaftlicher Online-Taschenrechner' }],
+    images: [{ url: site.ogImage, width: 1200, height: 630, alt: 'Matherechner: kostenloser wissenschaftlicher Online-Taschenrechner' }],
   },
   twitter: {
     card: 'summary_large_image',

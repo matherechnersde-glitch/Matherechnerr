@@ -60,7 +60,7 @@ export default function IntegralrechnerPage() {
 
       <ContentSection soft h2="Bestimmtes und unbestimmtes Integral">
         <p>Der Unterschied klingt kompliziert, ist aber einfach.</p>
-        <ul className="article-list"><li><strong>Unbestimmtes Integral:</strong> Es liefert die Stammfunktion mit plus C. Das Ergebnis ist eine Funktion.</li><li><strong>Bestimmtes Integral:</strong> Es hat zwei Grenzen a und b und liefert eine konkrete Zahl – den vorzeichenbehafteten Flächeninhalt zwischen diesen Stellen.</li></ul>
+        <ul className="article-list"><li><strong>Unbestimmtes Integral:</strong> Es liefert die Stammfunktion mit plus C. Das Ergebnis ist eine Funktion.</li><li><strong>Bestimmtes Integral:</strong> Es hat zwei Grenzen a und b und liefert eine konkrete Zahl: den vorzeichenbehafteten Flächeninhalt zwischen diesen Stellen.</li></ul>
         <p>Beim bestimmten Integral fällt das C weg, weil es sich beim Einsetzen der Grenzen von selbst aufhebt. Deshalb brauchst du dir darüber bei Flächenaufgaben keine Gedanken zu machen.</p>
       </ContentSection>
 
@@ -84,7 +84,7 @@ export default function IntegralrechnerPage() {
         <p>Beim Integrieren gibt es einen Trick, der dir mehr bringt als jede Musterlösung: die Umkehrprobe. Weil Integrieren und Ableiten Gegenspieler sind, kannst du dein Ergebnis selbst überprüfen. Leite deine gefundene Stammfunktion wieder ab. Kommt dabei die ursprüngliche Funktion heraus, hast du richtig integriert.</p>
         <p>So nutzt du den Rechner sinnvoll:</p>
         <ol className="article-list"><li>Integriere die Funktion zuerst selbst, so weit du kommst.</li><li>Vergleiche dein Ergebnis mit dem des Rechners.</li><li>Leite dein Ergebnis zur Kontrolle wieder ab.</li><li>Suche gezielt die Stelle, an der Rechenweg und dein Weg auseinanderlaufen.</li></ol>
-        <p>Auf diese Weise wird der Rechner vom bloßen Ergebnislieferant zur Lernhilfe. Er deckt Denkfehler auf und macht dich mit der Zeit unabhängig von ihm – und genau darauf kommt es in der Klausur an.</p>
+        <p>Auf diese Weise wird der Rechner vom bloßen Ergebnislieferant zur Lernhilfe. Er deckt Denkfehler auf und macht dich mit der Zeit unabhängig von ihm: und genau darauf kommt es in der Klausur an.</p>
       </ContentSection>
 
       <ContentSection h2="Häufig gestellte Fragen" id="faq"><FaqSection items={faq} /></ContentSection>

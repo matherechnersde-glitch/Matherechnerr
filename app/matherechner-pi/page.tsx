@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: canonical,
     title: metaTitle,
     description,
-    images: [{ url: image, width: 1672, height: 941, alt: 'Matherechner Pi – mit der Kreiszahl π rechnen' }],
+    images: [{ url: image, width: 1672, height: 941, alt: 'Matherechner Pi: mit der Kreiszahl π rechnen' }],
     publishedTime: updated,
     modifiedTime: updated,
   },
@@ -102,7 +102,7 @@ export default function MatherechnerPiPage() {
         <p>Pi taucht in der Schule überall auf, wo Kreise, Kugeln oder Winkel im Spiel sind. Das Gute: Du musst die Zahl nie selbst abtippen. Im <Link className="inline-link" href="/">Matherechner</Link> ist Pi als feste Konstante hinterlegt, du gibst einfach <code>pi</code> ein und rechnest normal weiter. Hier erfährst du, wie das genau funktioniert, welche Aufgaben du damit schnell löst und worauf du achten musst.</p>
         <p>Pi (Zeichen: π) ist das Verhältnis vom Umfang eines Kreises zu seinem Durchmesser. Egal wie groß oder klein der Kreis ist, dieses Verhältnis bleibt immer gleich. Der Wert beträgt ungefähr 3,14159.</p>
         <p>Pi ist eine irrationale Zahl. Das bedeutet: Die Nachkommastellen hören nie auf und wiederholen sich nicht in einem festen Muster. Deshalb rechnet man in der Praxis mit einer gerundeten Fassung, und genau das übernimmt der Rechner für dich.</p>
-        <Image className="article-featured-image" src={image} alt="Matherechner Pi – Berechnungen mit der Kreiszahl π" width={1672} height={941} priority sizes="(max-width: 620px) calc(100vw - 52px), 888px" />
+        <Image className="article-featured-image" src={image} alt="Matherechner Pi: Berechnungen mit der Kreiszahl π" width={1672} height={941} priority sizes="(max-width: 620px) calc(100vw - 52px), 888px" />
       </ContentSection>
 
       <ContentSection soft h2="So gibst du Pi richtig ein">
