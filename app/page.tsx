@@ -91,8 +91,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-09-15T23:59:59+05:00',
-  dateModified: '2026-09-15T23:59:59+05:00',
+  datePublished: '2026-09-17T23:59:59+05:00',
+  dateModified: '2026-09-17T23:59:59+05:00',
 };
 
 const faqSchema = {

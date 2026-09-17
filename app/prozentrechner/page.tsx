@@ -7,7 +7,7 @@ import PercentageCalculator from '@/components/PercentageCalculator';
 import { content } from '@/content/de';
 
 const description = 'Nutzen Sie unseren Prozentrechner, um einen Prozentwert zu ermitteln oder zwei Werte zu vergleichen.';
-const updated = '2026-09-15T23:59:59+05:00';
+const updated = '2026-09-17T23:59:59+05:00';
 const faq = [
   { q: 'Wie berechnet man einen Prozentsatz?', a: 'Teilen Sie den Teil durch das Ganze und multiplizieren Sie das Ergebnis mit 100. Zum Beispiel entsprechen 30 von 200 genau 15 %.' },
   { q: 'Was ist X Prozent einer Zahl?', a: 'Wandeln Sie den Prozentsatz in eine Dezimalzahl um und multiplizieren Sie ihn mit der Zahl. Zum Beispiel sind 25 % von 80 gleich 20.' },

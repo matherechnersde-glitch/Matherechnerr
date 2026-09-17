@@ -9,7 +9,7 @@ import { content } from '@/content/de';
 const title = 'Ableitungsrechner';
 const metaTitle = 'Ableitungsrechner: Ableitungen mit Rechenweg verstehen';
 const description = 'Der Ableitungsrechner bestimmt Ableitungen symbolisch und zeigt den Rechenweg verständlich: für Potenzen, Produkte, Kettenregel und mehr.';
-const updated = '2026-09-15T23:59:59+05:00';
+const updated = '2026-09-17T23:59:59+05:00';
 const canonical = '/ableitungsrechner/';
 const image = '/Ableitungsrechner.webp';
 
