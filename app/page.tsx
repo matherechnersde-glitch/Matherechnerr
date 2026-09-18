@@ -5,8 +5,18 @@ import { content } from '@/content/de';
 import Calculator from '@/components/DeferredCalculator';
 
 export const metadata: Metadata = {
+  title: { absolute: 'Matherechner: Kostenloser Online Taschenrechner für Mathematik' },
+  description: 'Matherechner kostenlos online nutzen: Wurzeln, Brüche, Prozent, Trigonometrie, Ableitungen und mehr. Direkt im Browser, ohne Anmeldung und ohne Download.',
   alternates: { canonical: '/' },
-  openGraph: { url: '/' },
+  openGraph: {
+    url: '/',
+    title: 'Matherechner: Kostenloser Online Taschenrechner für Mathematik',
+    description: 'Matherechner kostenlos online nutzen: Wurzeln, Brüche, Prozent, Trigonometrie, Ableitungen und mehr. Direkt im Browser, ohne Anmeldung und ohne Download.',
+  },
+  twitter: {
+    title: 'Matherechner: Kostenloser Online Taschenrechner für Mathematik',
+    description: 'Matherechner kostenlos online nutzen: Wurzeln, Brüche, Prozent, Trigonometrie, Ableitungen und mehr. Direkt im Browser, ohne Anmeldung und ohne Download.',
+  },
 };
 import ContentSection from '@/components/ContentSection';
 import HighlightGrid from '@/components/HighlightGrid';
