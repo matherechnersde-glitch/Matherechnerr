@@ -8,7 +8,7 @@ import { content } from '@/content/de';
 
 const title = 'Bruchrechner: Brüche addieren, kürzen & umrechnen';
 const description = 'Bruchrechner einfach erklärt: Brüche addieren, subtrahieren, multiplizieren, dividieren und kürzen, mit klaren Regeln, Beispielen und Rechenweg.';
-const updated = '2026-09-17T23:59:59+05:00';
+const updated = '2026-09-20T23:59:59+05:00';
 const canonical = '/bruchrechner/';
 const image = '/Bruchrechner.webp';
 

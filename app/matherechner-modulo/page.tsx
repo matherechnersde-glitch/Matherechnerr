@@ -9,7 +9,7 @@ import { content } from '@/content/de';
 const title = 'Matherechner Modulo';
 const metaTitle = 'Matherechner Modulo 2026';
 const description = 'Mit dem Matherechner Modulo berechnest du den Rest einer Division schnell, korrekt und direkt online: inklusive verständlicher Beispiele.';
-const updated = '2026-09-17T23:59:59+05:00';
+const updated = '2026-09-20T23:59:59+05:00';
 const canonical = '/matherechner-modulo/';
 const image = '/matherechner-modulo.webp';
 
