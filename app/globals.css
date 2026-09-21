@@ -2059,3 +2059,29 @@ p {
 .related-calculator-link:focus-visible{outline:3px solid rgba(20,110,180,.28);outline-offset:3px}
 @media(max-width:850px){.related-calculator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.related-calculators{margin:0}.related-calculators-heading{margin-bottom:18px;text-align:left}.related-calculators-heading h2{font-size:24px}.related-calculators-heading h2:after{margin-left:0}.related-calculator-grid{grid-template-columns:1fr;gap:11px}.related-calculator-card{padding:17px}.related-calculator-icon{margin-bottom:12px}.related-calculator-card p{margin-bottom:15px}}
+
+/* Homepage supported-function reference tables */
+.supported-functions{margin:24px 0 34px}
+.supported-functions-intro{margin-bottom:24px;border-left:4px solid var(--blue);border-radius:0 12px 12px 0;background:var(--blue-soft);padding:19px 21px}
+.supported-functions-intro h3{margin:0 0 9px;color:var(--text);font-size:24px;line-height:1.3}
+.supported-functions-intro p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+.supported-functions-group+.supported-functions-group{margin-top:27px}
+.supported-functions-group h4{display:inline-flex;align-items:center;gap:9px;margin:0 0 11px;color:var(--text);font-size:20px}
+.supported-functions-group h4:before{width:8px;height:8px;border-radius:50%;background:var(--blue);content:""}
+.supported-functions-table-wrap{width:100%;overflow-x:auto;border:1px solid #cddceb;border-radius:12px;background:#fff;box-shadow:0 7px 20px rgba(15,56,92,.06);scrollbar-color:#9cc8e9 #eef5fb}
+.supported-functions-table-wrap:focus-visible{outline:3px solid rgba(20,110,180,.25);outline-offset:3px}
+.supported-functions-table{width:100%;min-width:850px;border-collapse:separate;border-spacing:0;font-size:14px;line-height:1.45}
+.supported-functions-table th,.supported-functions-table td{padding:13px 14px;border-right:1px solid #e1e9f1;border-bottom:1px solid #e1e9f1;text-align:left;vertical-align:top}
+.supported-functions-table th:last-child,.supported-functions-table td:last-child{border-right:0}
+.supported-functions-table tbody tr:last-child th,.supported-functions-table tbody tr:last-child td{border-bottom:0}
+.supported-functions-table thead th{background:#eaf4fc;color:#123b74;font-size:13px;font-weight:850;white-space:nowrap}
+.supported-functions-table tbody th{width:14%;background:#f8fbfe;color:var(--blue);font:750 15px KaTeX_Main,"Cambria Math",Georgia,serif;white-space:nowrap}
+.supported-functions-table tbody tr:nth-child(even) td{background:#fbfdff}
+.supported-functions-table tbody tr:hover th,.supported-functions-table tbody tr:hover td{background:#f0f7fd}
+.supported-functions-table .math-example,.supported-functions-table .math-result{font:650 15px KaTeX_Main,"Cambria Math",Georgia,serif;white-space:nowrap}
+.supported-functions-table .math-result{color:#123b74;font-weight:800}
+.extended-keyboard-note{display:flex;align-items:flex-start;gap:15px;margin-top:28px;border:1px solid #b9d6ed;border-radius:12px;background:linear-gradient(135deg,#fff 0%,#edf7fe 100%);padding:19px 21px;box-shadow:0 7px 20px rgba(15,56,92,.06)}
+.extended-keyboard-note>span{display:grid;place-items:center;flex:0 0 44px;height:44px;border-radius:10px;background:var(--blue);color:#fff;font-size:21px}
+.extended-keyboard-note h4{margin:0 0 6px;color:var(--text);font-size:18px}
+.extended-keyboard-note p{margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+@media(max-width:620px){.supported-functions{margin:20px 0 28px}.supported-functions-intro{padding:16px 15px}.supported-functions-intro h3{font-size:21px}.supported-functions-intro p{font-size:14px}.supported-functions-group+.supported-functions-group{margin-top:22px}.supported-functions-group h4{font-size:18px}.supported-functions-table-wrap{border-radius:10px}.supported-functions-table{min-width:760px;font-size:13px}.supported-functions-table th,.supported-functions-table td{padding:11px 12px}.supported-functions-table tbody th,.supported-functions-table .math-example,.supported-functions-table .math-result{font-size:14px}.extended-keyboard-note{gap:11px;padding:16px 14px}.extended-keyboard-note>span{flex-basis:38px;height:38px;font-size:18px}}

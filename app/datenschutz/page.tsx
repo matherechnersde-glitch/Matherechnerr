@@ -19,8 +19,8 @@ const webPageSchema = {
   '@type': 'WebPage',
   name: 'Datenschutzerklärung',
   url: content.site.url + '/datenschutz/',
-  datePublished: '2026-09-20T23:59:59+05:00',
-  dateModified: '2026-09-20T23:59:59+05:00',
+  datePublished: '2026-09-21T23:59:59+05:00',
+  dateModified: '2026-09-21T23:59:59+05:00',
 };
 
 export default function DatenschutzPage() {

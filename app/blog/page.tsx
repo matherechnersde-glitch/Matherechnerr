@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Matherechner Blog', url: `${content.site.url}/blog/`, datePublished: '2026-09-20T23:59:59+05:00', dateModified: '2026-09-20T23:59:59+05:00' };
+  const schema = { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Matherechner Blog', url: `${content.site.url}/blog/`, datePublished: '2026-09-21T23:59:59+05:00', dateModified: '2026-09-21T23:59:59+05:00' };
   return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /><main>
     <section className="hero-section blog-hero"><div className="page-shell"><h1>Matherechner Blog</h1><p className="blog-lead">Praktische Rechner, verständliche Formeln und hilfreiche Erklärungen für Schule, Beruf und Alltag.</p></div></section>
     <section className="content-section"><div className="blog-grid">

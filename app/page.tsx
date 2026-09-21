@@ -93,6 +93,103 @@ const specialCalculators = [
     icon: '€',
   },
 ] as const;
+type FunctionRow = readonly [string, string, string, string, string];
+
+const supportedFunctionGroups: ReadonlyArray<{
+  title: string;
+  rows: ReadonlyArray<FunctionRow>;
+}> = [
+  {
+    title: 'Algebra',
+    rows: [
+      ['= mit x', 'Gleichung lösen', 'Löst lineare und quadratische Gleichungen', 'x² − 5x + 6 = 0', 'x = 2, x = 3'],
+      ['<, ≤, >, ≥', 'Ungleichung lösen', 'Löst Ungleichungen', '2x + 3 > 7', 'x > 2'],
+      ['x, y', 'Variablen', 'Für Terme und Gleichungen mit Unbekannten', '(x + 5)(x + 2)', 'x² + 7x + 10'],
+      ['xⁿ', 'Potenz', 'Beliebige Potenzen', '2¹⁰', '1024'],
+      ['ⁿ√x', 'n-te Wurzel', 'Quadratwurzel, Kubikwurzel oder jede andere Wurzel', '³√27', '3'],
+      ['¹⁄ₓ', 'Kehrwert', 'Bildet den Kehrwert einer Zahl', '1/4', '0,25'],
+      ['|x|', 'Betrag', 'Abstand zur Null, immer positiv', '|−7|', '7'],
+      ['log', 'Zehnerlogarithmus', 'Logarithmus zur Basis 10', 'log(1000)', '3'],
+      ['x!', 'Fakultät', 'Multipliziert alle ganzen Zahlen von 1 bis x', '5!', '120'],
+      ['i', 'Imaginäre Einheit', 'Für komplexe Zahlen', 'i²', '−1'],
+      ['%', 'Prozent', 'Prozentrechnung', '19 % von 250', '47,5'],
+    ],
+  },
+  {
+    title: 'Trigonometrie',
+    rows: [
+      ['sin, cos, tan', 'Sinus, Kosinus, Tangens', 'Winkelfunktionen', 'sin(30°)', '0,5'],
+      ['arcsin, arccos, arctan', 'Arkussinus, Arkuskosinus, Arkustangens', 'Bestimmt den Winkel aus einem Wert', 'arcsin(0,5)', '30°'],
+      ['csc, sec, cot', 'Kosekans, Sekans, Kotangens', 'Kehrwerte von sin, cos und tan', 'sec(60°)', '2'],
+      ['π', 'Kreiszahl Pi', 'Gespeicherte Konstante, 3,14159…', '2π', '6,2832'],
+      ['x², x⁻¹', 'Quadrat, Kehrwert', 'Quadriert einen Wert oder bildet den Kehrwert', 'cos(60°)⁻¹', '2'],
+      ['DEG / RAD', 'Gradmaß / Bogenmaß', 'Legt fest, wie Winkel gelesen werden', 'sin(π) im RAD-Modus', '0'],
+    ],
+  },
+  {
+    title: 'Analysis',
+    rows: [
+      ['d/dx', 'Ableitung', 'Leitet eine Funktion ab', 'd/dx x³', '3x²'],
+      ['lim', 'Grenzwert', 'Grenzwert einer Funktion', 'lim x→0 sin(x)/x', '1'],
+      ['lim⁺, lim⁻', 'Rechtsseitiger / linksseitiger Grenzwert', 'Grenzwert von rechts oder von links', 'lim x→0⁺ 1/x', '∞'],
+      ['∫', 'Unbestimmtes Integral', 'Bestimmt die Stammfunktion', '∫ x² dx', 'x³/3 + C'],
+      ['∫ᵇₐ', 'Bestimmtes Integral', 'Fläche unter einer Kurve zwischen zwei Grenzen', '∫₀² x² dx', '8/3 ≈ 2,667'],
+      ['Σ', 'Summe', 'Addiert die Glieder einer Reihe', 'Σ k für k = 1 bis 10', '55'],
+      ['C(n,k)', 'Binomialkoeffizient („n über k“)', 'Anzahl der Möglichkeiten, k aus n auszuwählen, ohne Reihenfolge', 'C(49, 6), Lotto 6 aus 49', '13.983.816'],
+      ['P(n,k)', 'Variation ohne Wiederholung', 'Anzahl der Möglichkeiten, k aus n auszuwählen und anzuordnen', 'P(10, 3)', '720'],
+      ['e, ∞', 'Eulersche Zahl, Unendlich', 'Konstanten für die Analysis', 'e', '2,71828…'],
+    ],
+  },
+];
+
+function SupportedFunctionsGuide() {
+  return (
+    <div className="supported-functions">
+      <div className="supported-functions-intro">
+        <h3>Unterstützte Funktionen mit Beispielen</h3>
+        <p><em>Dieser Matherechner kann mehr als die Grundrechenarten. Er löst Gleichungen und Ungleichungen und berechnet Ableitungen, Grenzwerte, Integrale und Summen. Hier findest du alle Funktionen, sortiert nach den drei Reitern, jeweils mit einem Beispiel zum direkten Eintippen.</em></p>
+      </div>
+
+      {supportedFunctionGroups.map((group) => (
+        <section className="supported-functions-group" key={group.title} aria-labelledby={`functions-${group.title.toLowerCase()}`}>
+          <h4 id={`functions-${group.title.toLowerCase()}`}>{group.title}</h4>
+          <div className="supported-functions-table-wrap" tabIndex={0} role="region" aria-label={`${group.title}: unterstützte Funktionen`}>
+            <table className="supported-functions-table">
+              <thead>
+                <tr>
+                  <th scope="col">Taste</th>
+                  <th scope="col">Bezeichnung</th>
+                  <th scope="col">Was sie macht</th>
+                  <th scope="col">Beispiel</th>
+                  <th scope="col">Ergebnis</th>
+                </tr>
+              </thead>
+              <tbody>
+                {group.rows.map((row) => (
+                  <tr key={`${group.title}-${row[0]}`}>
+                    <th scope="row">{row[0]}</th>
+                    <td>{row[1]}</td>
+                    <td>{row[2]}</td>
+                    <td className="math-example">{row[3]}</td>
+                    <td className="math-result">{row[4]}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
+
+      <aside className="extended-keyboard-note">
+        <span aria-hidden="true">⌨</span>
+        <div>
+          <h4>Erweiterte Tastatur</h4>
+          <p>Über das Tastatur-Symbol im Eingabefeld öffnest du weitere Eingabemöglichkeiten: ln und exp, Brüche, ±, ≠, eckige Klammern, das komplette griechische Alphabet und eine Buchstabentastatur. So tippst du Formeln genau so ein, wie sie in deinem Schulbuch stehen.</p>
+        </div>
+      </aside>
+    </div>
+  );
+}
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
@@ -101,8 +198,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-09-20T23:59:59+05:00',
-  dateModified: '2026-09-20T23:59:59+05:00',
+  datePublished: '2026-09-21T23:59:59+05:00',
+  dateModified: '2026-09-21T23:59:59+05:00',
 };
 
 const faqSchema = {
@@ -155,6 +252,7 @@ export default function HomePage() {
           <p>{sectionCompare.intro}</p>
           <HighlightGrid items={sectionCompare.comparison} variant="comparison" />
           <p style={{ marginTop: '18px' }}>{sectionCompare.conclusion}</p>
+          <SupportedFunctionsGuide />
         </ContentSection>
 
         {/* Taschenrechner mit Wurzel, Pi und Klammern */}
