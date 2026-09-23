@@ -19,8 +19,8 @@ const webPageSchema = {
   '@type': 'WebPage',
   name: 'Datenschutzerklärung',
   url: content.site.url + '/datenschutz/',
-  datePublished: '2026-09-21T23:59:59+05:00',
-  dateModified: '2026-09-21T23:59:59+05:00',
+  datePublished: '2026-09-23T23:59:59+05:00',
+  dateModified: '2026-09-23T23:59:59+05:00',
 };
 
 export default function DatenschutzPage() {
@@ -57,7 +57,13 @@ export default function DatenschutzPage() {
           Diese Website verwendet <strong>keine Tracking-Cookies</strong> und setzt keine Cookies von Drittanbietern ein. Es werden weder Analyse-Tools wie Google Analytics noch Werbenetzwerke eingesetzt.
         </p>
         <p>
-          Der Taschenrechner nutzt das <code>localStorage</code>-Feature Ihres Browsers, um Ihren Rechenverlauf zu speichern. Dies ist technisch notwendig für die Verlauf-Funktion und dient keinen Tracking-Zwecken. <code>localStorage</code>-Daten können Sie jederzeit in den Browser-Einstellungen löschen.
+          Der Taschenrechner nutzt das <code>localStorage</code>-Feature Ihres Browsers, um Ihren Rechenverlauf zu speichern. Dies ist technisch notwendig für die von Ihnen genutzte Verlauf-Funktion und dient keinen Tracking-Zwecken. <code>localStorage</code>-Daten können Sie jederzeit über „Verlauf löschen“ oder in den Browser-Einstellungen entfernen.
+        </p>
+        <p>
+          Zusätzlich speichern wir Ihre Cookie- und Datenschutzauswahl unter <code>matherechner-consent-v1</code> für höchstens zwölf Monate im lokalen Speicher. Darin stehen die gewählten Kategorien sowie Zeitpunkt, Ablaufdatum und Version der Einwilligung. Diese Speicherung ist erforderlich, damit wir Ihre Entscheidung beachten und Sie nicht bei jedem Seitenaufruf erneut fragen. Sie können Ihre Auswahl jederzeit über „Cookie-Einstellungen“ im Footer ändern oder widerrufen.
+        </p>
+        <p>
+          Die optionalen Kategorien <strong>Analyse</strong> und <strong>Marketing</strong> sind standardmäßig deaktiviert. Derzeit setzt Matherechner keine Dienste dieser Kategorien ein. Sollten solche Dienste künftig eingebunden werden, informieren wir Sie vorab konkret über Anbieter, Zweck und Speicherdauer, aktualisieren die Einwilligungsabfrage und bitten erneut um Ihre ausdrückliche Einwilligung.
         </p>
       </ContentSection>
 
@@ -77,6 +83,8 @@ export default function DatenschutzPage() {
         <ul className="feature-list" style={{ gridTemplateColumns: '1fr', marginBottom: '14px' }}>
           <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong>: Verarbeitung zur Durchführung vorvertraglicher Maßnahmen bzw. zur Erfüllung eines Vertrags (z. B. bei Kontaktanfragen)</li>
           <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong>: Verarbeitung zur Wahrung berechtigter Interessen des Betreibers (z. B. technisch notwendiger lokaler Speicher des Rechners)</li>
+          <li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong>: Einwilligung, sofern künftig optionale Analyse- oder Marketingdienste eingesetzt werden</li>
+          <li><strong>§ 25 TDDDG</strong>: Einwilligung für nicht unbedingt erforderliche Speicherung oder Zugriffe auf Ihrem Endgerät; technisch unbedingt erforderliche Speicherungen richten sich nach § 25 Abs. 2 TDDDG</li>
         </ul>
       </ContentSection>
 
@@ -98,7 +106,7 @@ export default function DatenschutzPage() {
 
       <ContentSection soft={false} h2="Änderungen dieser Datenschutzerklärung">
         <p>
-          Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen anzupassen oder um Änderungen unserer Dienste zu berücksichtigen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar. Stand: August 2026.
+          Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen anzupassen oder um Änderungen unserer Dienste zu berücksichtigen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar. Stand: September 2026.
         </p>
       </ContentSection>
     </main>

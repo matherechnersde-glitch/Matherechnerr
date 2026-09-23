@@ -9,7 +9,7 @@ import { content } from '@/content/de';
 const title = 'Matherechner Pi: So rechnest du mit der Kreiszahl';
 const metaTitle = 'Matherechner Pi 2026';
 const description = 'Im Matherechner ist Pi als feste Konstante hinterlegt, du gibst einfach pi ein und rechnest normal weiter.';
-const updated = '2026-09-21T23:59:59+05:00';
+const updated = '2026-09-23T23:59:59+05:00';
 const canonical = '/matherechner-pi/';
 const image = '/matherechner-pi.webp';
 

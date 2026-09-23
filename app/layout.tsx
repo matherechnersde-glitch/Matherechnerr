@@ -3,6 +3,7 @@ import './globals.css';
 import { content } from '@/content/de';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CookieConsent from '@/components/CookieConsent';
 
 const { site } = content;
 
@@ -60,8 +61,8 @@ const orgSchema = {
       '@type': 'WebSite',
       name: site.name,
       url: site.url,
-      datePublished: '2026-09-21T23:59:59+05:00',
-      dateModified: '2026-09-21T23:59:59+05:00',
+      datePublished: '2026-09-23T23:59:59+05:00',
+      dateModified: '2026-09-23T23:59:59+05:00',
     },
   ],
 };
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header content={content.header} />
         {children}
         <Footer content={content.footer} />
+        <CookieConsent />
       </body>
     </html>
   );

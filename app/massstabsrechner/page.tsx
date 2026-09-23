@@ -8,7 +8,7 @@ import { content } from '@/content/de';
 
 const title = 'Maßstabsrechner: Maßstab berechnen und umrechnen';
 const description = 'Maßstabsrechner: Maßstab berechnen und umrechnen: für Plan, Karte und Modellbau mit automatischer Einheitenumrechnung und verständlichem Rechenweg.';
-const updated = '2026-09-21T23:59:59+05:00';
+const updated = '2026-09-23T23:59:59+05:00';
 const canonical = '/massstabsrechner/';
 const image = '/Maßstabsrechner.webp';
 

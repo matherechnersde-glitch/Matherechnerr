@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CookieSettingsButton from '@/components/CookieSettingsButton';
 
 interface FooterContent {
   tagline: string;
@@ -48,6 +49,7 @@ export default function Footer({ content }: { content: FooterContent }) {
         {content.bottomLinks.map((link) => (
           <Link prefetch={false} key={link.href} href={link.href}>{link.label}</Link>
         ))}
+        <CookieSettingsButton />
         <span>{content.copyright}</span>
       </div>
     </footer>
