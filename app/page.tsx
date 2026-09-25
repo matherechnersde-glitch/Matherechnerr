@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { content } from '@/content/de';
 import Calculator from '@/components/DeferredCalculator';
+import FunctionShowcaseSlider from '@/components/FunctionShowcaseSlider';
 
 export const metadata: Metadata = {
   title: { absolute: 'Matherechner: Kostenloser Online Taschenrechner für Mathematik' },
@@ -253,6 +254,7 @@ export default function HomePage() {
           <HighlightGrid items={sectionCompare.comparison} variant="comparison" />
           <p style={{ marginTop: '18px' }}>{sectionCompare.conclusion}</p>
           <SupportedFunctionsGuide />
+          <FunctionShowcaseSlider />
         </ContentSection>
 
         {/* Taschenrechner mit Wurzel, Pi und Klammern */}
