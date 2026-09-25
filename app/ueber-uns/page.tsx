@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import ContentSection from '@/components/ContentSection';
 import HighlightGrid from '@/components/HighlightGrid';
 import { content } from '@/content/de';
@@ -39,7 +40,7 @@ export default function UeberUnsPage() {
 
       <ContentSection soft={false} h2="Was ist Matherechner?">
         <p>
-          Matherechner ist ein kostenloser, wissenschaftlicher Online-Taschenrechner, der direkt im Browser läuft. Er wurde entwickelt, um die Lücke zwischen dem einfachen Standardrechner auf dem Smartphone und dem teuren physischen Taschenrechner für die Schule zu schließen.
+          <Link href="/" className="inline-link">Matherechner</Link> ist ein kostenloser, wissenschaftlicher Online-Taschenrechner, der direkt im Browser läuft. Er wurde entwickelt, um die Lücke zwischen dem einfachen Standardrechner auf dem Smartphone und dem teuren physischen Taschenrechner für die Schule zu schließen.
         </p>
         <p>
           Von der einfachen Prozentrechnung über Quadratwurzeln und Potenzen bis hin zu trigonometrischen Funktionen, Logarithmen und Gleichungslösungen: Matherechner bietet das vollständige Werkzeugset, das Schüler, Studenten und Berufstätige im Alltag benötigen, ohne einen Cent dafür ausgeben zu müssen.
