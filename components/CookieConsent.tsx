@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const STORAGE_KEY = 'matherechner-consent-v1';
 // Increment this version and update the disclosed providers, purposes and durations whenever optional services change.
@@ -48,12 +48,12 @@ function publishPreferences(preferences: ConsentPreferences) {
 }
 
 export default function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+  // Render the notice in the initial HTML so it is not inserted late after hydration.
+  const [visible, setVisible] = useState(true);
   const [showSettings, setShowSettings] = useState(false);
   const [hasDecision, setHasDecision] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
-  const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const stored = readPreferences();
@@ -61,12 +61,12 @@ export default function CookieConsent() {
       setAnalytics(stored.analytics);
       setMarketing(stored.marketing);
       setHasDecision(true);
+      setVisible(false);
       publishPreferences(stored);
-    } else {
-      setVisible(true);
     }
 
     const openSettings = () => {
+      delete document.documentElement.dataset.consentKnown;
       const current = readPreferences();
       setAnalytics(current?.analytics ?? false);
       setMarketing(current?.marketing ?? false);
@@ -81,7 +81,6 @@ export default function CookieConsent() {
 
   useEffect(() => {
     if (!visible) return;
-    const focusTimer = window.setTimeout(() => titleRef.current?.focus(), 0);
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== 'Escape') return;
       if (showSettings && !hasDecision) {
@@ -93,7 +92,6 @@ export default function CookieConsent() {
     };
     document.addEventListener('keydown', onKeyDown);
     return () => {
-      window.clearTimeout(focusTimer);
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [visible, showSettings, hasDecision]);
@@ -137,7 +135,7 @@ export default function CookieConsent() {
           <span className="cookie-consent-icon" aria-hidden="true">🍪</span>
           <div>
             <span className="cookie-consent-kicker">Datenschutz</span>
-            <h2 id="cookie-consent-title" ref={titleRef} tabIndex={-1}>
+            <h2 id="cookie-consent-title" tabIndex={-1}>
               {showSettings ? 'Cookie-Einstellungen' : 'Ihre Privatsphäre, Ihre Entscheidung'}
             </h2>
           </div>
@@ -159,7 +157,7 @@ export default function CookieConsent() {
               Wir verwenden technisch notwendige lokale Speicherungen für Ihre Einwilligungswahl und den Rechnerverlauf. Optionale Analyse- und Marketingdienste sind derzeit nicht aktiv. Falls sich das ändert, informieren wir Sie konkret und fragen erneut nach Ihrer Einwilligung.
             </p>
             <p className="cookie-consent-links">
-              Weitere Informationen finden Sie in unserer <Link href="/datenschutz/">Datenschutzerklärung</Link>.
+              Weitere Informationen finden Sie in unserer <Link href="/datenschutz/" prefetch={false}>Datenschutzerklärung</Link>.
             </p>
             <div className="cookie-consent-actions">
               <button type="button" className="cookie-button cookie-button--primary" onClick={() => save({ analytics: false, marketing: false })}>
@@ -212,7 +210,7 @@ export default function CookieConsent() {
             </div>
 
             <p className="cookie-consent-links cookie-consent-links--settings">
-              Details zu Speicherdauer, Zweck und Widerruf: <Link href="/datenschutz/">Datenschutzerklärung</Link>
+              Details zu Speicherdauer, Zweck und Widerruf: <Link href="/datenschutz/" prefetch={false}>Datenschutzerklärung</Link>
             </p>
             <div className="cookie-consent-actions cookie-consent-actions--settings">
               <button type="button" className="cookie-button cookie-button--primary" onClick={() => save({ analytics: false, marketing: false })}>

@@ -7,6 +7,7 @@ import CookieConsent from '@/components/CookieConsent';
 
 const { site } = content;
 
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -34,7 +35,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/siteicon.webp', type: 'image/webp' },
-      { url: '/favicon.ico', sizes: 'any' },
     ],
     apple: '/siteicon.webp',
     shortcut: '/siteicon.webp',
@@ -61,8 +61,8 @@ const orgSchema = {
       '@type': 'WebSite',
       name: site.name,
       url: site.url,
-      datePublished: '2026-09-23T23:59:59+05:00',
-      dateModified: '2026-09-23T23:59:59+05:00',
+      datePublished: '2026-09-26T23:59:59+05:00',
+      dateModified: '2026-09-26T23:59:59+05:00',
     },
   ],
 };
@@ -71,6 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{const c=JSON.parse(localStorage.getItem('matherechner-consent-v1')||'null');if(c?.version===1&&c?.necessary===true&&Date.parse(c.expiresAt)>Date.now())document.documentElement.dataset.consentKnown='true'}catch{}",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}

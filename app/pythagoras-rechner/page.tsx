@@ -9,7 +9,7 @@ import { content } from '@/content/de';
 const title = 'Pythagoras Rechner: Die fehlende Seite im rechtwinkligen Dreieck';
 const metaTitle = 'Pythagoras Rechner: Hypotenuse & Kathete berechnen';
 const description = 'Pythagoras Rechner für rechtwinklige Dreiecke: fehlende Hypotenuse oder Kathete mit a² + b² = c² berechnen, inklusive Beispielen, Tripeln und Rechenweg.';
-const updated = '2026-09-23T23:59:59+05:00';
+const updated = '2026-09-26T23:59:59+05:00';
 const canonical = '/pythagoras-rechner/';
 const image = '/pythagoras-rechner.webp';
 
