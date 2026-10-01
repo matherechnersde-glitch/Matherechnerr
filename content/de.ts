@@ -31,9 +31,9 @@ export const content = {
   hero: {
     h1: 'Matherechner kostenlos online',
     intro: [
-      'Stellen Sie sich vor, Sie lösen gerade eine komplexe Mathe-Hausaufgabe, aber der Taschenrechner Ihres Smartphones beherrscht nur die Grundrechenarten Addition, Subtraktion, Multiplikation und Division: mehr nicht. Matherechner wurde genau für dieses Problem entwickelt und bietet nicht nur Standardfunktionen, sondern auch erweiterte Funktionen wie trigonometrische Funktionen, Potenzen und Prozentrechnungen.',
-      'Matherechner ist ein kostenloser Online-wissenschaftlicher Taschenrechner, der fast alles bewältigt, was ein normaler Taschenrechner nicht kann. Er funktioniert direkt in Ihrem Browser auf jedem Smartphone, Tablet oder Laptop: ganz ohne Download, Registrierung und kostenlos. Sie müssen keinen Taschenrechner oder eine App für alltägliche Rechenaufgaben kaufen, denn diese Seite ist kostenlos, läuft in Ihrem Browser und erfordert keinerlei Installation.',
-      'Lassen Sie mich Ihnen daher kurz erläutern, was er alles kann und warum er still und leise das ersetzen könnte, was Sie derzeit nutzen, und zu Ihrer ersten Wahl für Berechnungen werden könnte.',
+      'Stell dir vor, du arbeitest an einer komplexen Mathematikaufgabe für die Schule oder Universität, aber dein gewöhnlicher Taschenrechner beherrscht nur die grundlegenden Rechenoperationen wie Addition, Subtraktion, Multiplikation und Division – und sonst nichts. Matherechner wurde genau für dieses Problem entwickelt und bietet neben Standardfunktionen auch erweiterte Funktionen wie trigonometrische Funktionen, logarithmische und exponentielle Funktionen, Gleitkommaberechnungen, Potenzen und Prozentrechnung.',
+      'Matherechner ist ein kostenloser wissenschaftlicher Online-Taschenrechner, der fast alles berechnen kann, was ein gewöhnlicher Taschenrechner nicht schafft. Er funktioniert direkt in deinem Browser auf jedem Smartphone, Tablet oder Laptop: Ein Download oder eine Registrierung ist nicht erforderlich, und die Nutzung ist völlig kostenlos. Du musst für alltägliche Mathematikaufgaben keinen Taschenrechner und keine App kaufen, denn diese Website ist kostenlos, läuft in deinem Browser und erfordert keine Installation.',
+      'Im Folgenden findest du einen ausführlichen Überblick über den Matherechner: was er kann und warum er ganz nebenbei das ersetzen könnte, was du derzeit verwendest, und zu deiner ersten Wahl für Berechnungen werden könnte.',
     ],
   },
 
