@@ -41,19 +41,19 @@ export const content = {
     soft: false,
     h2: 'Wissenschaftlicher vs. einfacher Taschenrechner',
     intro:
-      'Ein normaler Taschenrechner: der, der bereits auf deinem Smartphone installiert ist oder in einer Schreibtischschublade liegt: bietet nur sehr grundlegende Funktionen und vielleicht eine Prozent-Taste, die in verschiedenen Situationen kaum jemand richtig versteht. Das reicht für einfache Rechenaufgaben wie das Aufteilen einer Restaurantrechnung. Sobald jedoch ein komplexes oder fortgeschrittenes Problem gelöst werden muss, versagt er.',
+      'Ein Standard- oder gewöhnlicher Taschenrechner – wie er bereits auf Ihrem Smartphone vorinstalliert ist, in einer Schreibtischschublade oder im Schulranzen liegt – bietet nur sehr grundlegende Funktionen und vielleicht eine Prozent-Taste, was in vielen Situationen kaum hilfreich ist. Für einfache Berechnungen wie das Aufteilen einer Restaurantrechnung sowie Addition und Subtraktion ist dies ausreichend. Sobald jedoch ein komplexes oder anspruchsvolles Problem gelöst werden muss, reicht er nicht mehr aus.',
     comparison: [
       {
         h3: 'Einfacher Taschenrechner',
-        p: 'Addition, Subtraktion, Multiplikation, Division. Vielleicht eine Speichertaste.',
+        p: 'Er beherrscht nur Addition, Subtraktion, Multiplikation und Division. Vielleicht gibt es noch eine Prozent-Taste und eine Speichertaste.',
       },
       {
         h3: 'Wissenschaftlicher Taschenrechner',
-        p: 'Er beherrscht viele Funktionen, dazu noch Wurzeln, Potenzen, Brüche, trigonometrische Funktionen, Logarithmen, Pi, Klammern für die korrekte Reihenfolge der Rechenoperationen und eine Prozentlogik, die sich tatsächlich vorhersehbar verhält.',
+        p: 'Er deckt viele Funktionen ab, darunter Wurzeln, Potenzen, Brüche, trigonometrische Funktionen, Logarithmen, Grenzwerte, Ableitungen, Gleichungen, Pi, Klammern für die korrekte Reihenfolge der Rechenoperationen sowie eine Prozentlogik, die sich tatsächlich vorhersehbar verhält, und vieles mehr.',
       },
     ] satisfies HighlightItem[],
     conclusion:
-      'Allein die Unterstützung von Klammern ist die sinnvollste Ergänzung. Wenn wir 3 + 4 × 2 in einen billigen einfachen Taschenrechner eingeben, geben einige Modelle fröhlich 14 statt 11 aus, weil sie die Reihenfolge der Rechenoperationen ignorieren. Ein richtiger wissenschaftlicher Taschenrechner macht diesen Fehler niemals.',
+      'Allein die Unterstützung für Klammern ist die sinnvollste Ergänzung. Wenn wir 3 + 4 × 2 in einen billigen, einfachen Taschenrechner eingeben, geben manche Modelle fröhlich 14 statt 11 aus, weil sie die Reihenfolge der Rechenoperationen ignorieren. Ein richtiger wissenschaftlicher Taschenrechner macht diesen Fehler niemals. Er bietet Lösungen für fast alle Arten von mathematischen Problemen. Für detailliertere Rechenoperationen können Sie auf das Symbol oben rechts im Taschenrechner klicken.',
   },
 
   sectionFunctions: {
