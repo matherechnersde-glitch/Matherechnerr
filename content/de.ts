@@ -114,12 +114,15 @@ export const content = {
 
   sectionHow: {
     soft: false,
-    h2: 'So verwenden Sie den Taschenrechner',
+    h2: 'So verwenden Sie den Rechner',
+    intro: 'Die Verwendung des Mathematikrechners ist kinderleicht – befolgen Sie einfach die folgenden Schritte:',
     steps: [
-      'Geben Sie Ihren Ausdruck ein: Klammern, Funktionen, Konstanten, einfach alles: und sehen Sie sich den vollständigen Ausdruck auf dem Bildschirm an, bevor Sie die Berechnung starten.',
-      'Wechseln Sie mithilfe der Modusumschaltung zwischen Grad- und Radiant-Modus für die Trigonometrie.',
-      'Drücken Sie die Gleichheits-Taste. Das Ergebnis wird angezeigt, und Ihre vorherigen Berechnungen bleiben sichtbar, sodass Sie Ihren Rechenweg überprüfen können. Auf Mobilgeräten funktioniert alles genauso: das Layout passt sich lediglich an Ihren Bildschirm an.',
-      'Das ist wirklich alles. Kein Konto, keine Werbung, die die Tastatur verdeckt, keine „Premium-Funktionen", die hinter einer Bezahlschranke versteckt sind.',
+      'Geben Sie Ihre Aufgabe in den Rechner ein – das können Klammern, Funktionen, Grenzwerte, Ableitungen oder alles Mögliche sein – und sehen Sie sich den vollständigen Ausdruck auf dem Bildschirm an, bevor Sie die Berechnung tatsächlich starten.',
+      'Nutze die Tastaturoption oben rechts im Rechner für detailliertere Operationen, die sich besonders für komplexe Aufgaben eignen.',
+      'Drücke die Umschalttaste, wenn zusätzliche Eingabefelder sichtbar sind – dies ermöglicht detailliertere Potenzoperationen.',
+      'Um dein Ergebnis zu erhalten, drücke die Gleichheits-Taste; das Ergebnis wird umgehend auf deinem Bildschirm angezeigt.',
+      'Ihre vorherigen Berechnungen bleiben sichtbar, sodass Sie Ihre Arbeit überprüfen können, ohne raten zu müssen. Auf mobilen Geräten funktioniert alles genauso; das Layout passt sich einfach Ihrem Bildschirm an.',
+      'Das ist alles, was Sie zur Bedienung des Taschenrechners wissen müssen. Sie benötigen weder ein Konto noch „Premium-Funktionen“, die hinter einer Bezahlschranke verborgen sind.',
     ],
   },
 

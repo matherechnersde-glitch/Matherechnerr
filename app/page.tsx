@@ -199,7 +199,7 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-10-02T23:59:59+05:00',
+  datePublished: '2026-10-03T23:59:59+05:00',
   dateModified: '2026-10-02T23:59:59+05:00',
 };
 
@@ -276,15 +276,16 @@ export default function HomePage() {
 
         {/* So verwenden Sie */}
         <ContentSection soft={sectionHow.soft} h2={sectionHow.h2}>
+          <p>{sectionHow.intro}</p>
           <ol className="steps-list">
             {sectionHow.steps.map((step, i) => <li key={i}>{step}</li>)}
           </ol>
           <Image
             className="how-section-image"
-            src="/Matherechner2026.webp"
-            alt="Matherechner im Einsatz: Schritt-für-Schritt-Anwendung des Online-Taschenrechners"
-            width={1448}
-            height={1086}
+            src="/Bildschirmfoto-6.webp"
+            alt="Matherechner-Bedienung mit erweiterten mathematischen Eingabefunktionen"
+            width={739}
+            height={551}
             sizes="(max-width: 620px) 100vw, 888px"
           />
         </ContentSection>
