@@ -241,8 +241,8 @@ export default function HomePage() {
               className="intro-followup-image"
               src="/Matherechner-online.webp"
               alt="Matherechner online: kostenloser wissenschaftlicher Taschenrechner für Wurzeln, Brüche, Prozentrechnung und Trigonometrie"
-              width={195}
-              height={141}
+              width={1731}
+              height={909}
               sizes="(max-width: 620px) calc(100vw - 28px), 680px"
             />
           </div>
