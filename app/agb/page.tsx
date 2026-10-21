@@ -35,7 +35,7 @@ export default function AgbPage() {
 
       <ContentSection soft={false} h2="§ 1 Geltungsbereich und Nutzung">
         <p>
-          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung des kostenlosen Online-Taschenrechners auf <strong>matherechnerr.de</strong>. Mit dem Zugriff auf diese Website erklären Sie sich mit den nachfolgenden Bedingungen einverstanden.
+          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung des kostenlosen <a href="/" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>Matherechners</a> auf <strong>matherechnerr.de</strong>. Mit dem Zugriff auf diese Website erklären Sie sich mit den nachfolgenden Bedingungen einverstanden.
         </p>
         <p>
           Der Taschenrechner steht jedem Nutzer kostenlos zur Verfügung. Eine Registrierung, ein Benutzerkonto oder eine Anmeldung ist nicht erforderlich. Es gelten keinerlei Nutzungsentgelte.

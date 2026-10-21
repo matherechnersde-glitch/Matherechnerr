@@ -40,7 +40,7 @@ export default function KontaktPage() {
 
       <ContentSection soft={false} h2="So erreichen Sie uns">
         <p>
-          Wir freuen uns über Ihre Nachricht: egal ob Feedback, Fehlerhinweis, Kooperationsanfrage oder Frage zum Datenschutz. Nutzen Sie das Formular weiter unten oder senden Sie uns eine E-Mail. Wir antworten in der Regel innerhalb von 1-3 Werktagen.
+          Wir freuen uns über Ihre Nachricht: egal ob Feedback zum <a href="/" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>Matherechner</a>, Fehlerhinweis, Kooperationsanfrage oder Frage zum Datenschutz. Nutzen Sie das Formular weiter unten oder senden Sie uns eine E-Mail. Wir antworten in der Regel innerhalb von 1-3 Werktagen.
         </p>
         <HighlightGrid items={channels} />
       </ContentSection>

@@ -39,7 +39,7 @@ export const content = {
 
   sectionCompare: {
     soft: false,
-    h2: 'Wissenschaftlicher vs. einfacher Taschenrechner',
+    h2: 'Matherechner app vs. einfacher Taschenrechner',
     intro:
       'Ein Standard- oder gewöhnlicher Taschenrechner – wie er bereits auf Ihrem Smartphone vorinstalliert ist, in einer Schreibtischschublade oder im Schulranzen liegt – bietet nur sehr grundlegende Funktionen und vielleicht eine Prozent-Taste, was in vielen Situationen kaum hilfreich ist. Für einfache Berechnungen wie das Aufteilen einer Restaurantrechnung sowie Addition und Subtraktion ist dies ausreichend. Sobald jedoch ein komplexes oder anspruchsvolles Problem gelöst werden muss, reicht er nicht mehr aus.',
     comparison: [
@@ -106,7 +106,7 @@ export const content = {
 
   sectionWhy: {
     soft: true,
-    h2: 'Online-Rechner statt Gerät kaufen: die Vorteile',
+    h2: 'Warum ein Online-Matherechner die bessere Wahl ist',
     paragraphs: [
       'Ein normaler wissenschaftlicher Taschenrechner kostet 20-40 €, und Modelle mit Grafikfunktion können bis zu 100 € kosten. Das machte 1998 noch Sinn. Dieses Tool bietet dir dieselben Kernfunktionen mit besseren Features. Es ist immer dabei, das Display ist größer und besser lesbar, und Updates erfolgen automatisch. Ein wichtiger Punkt, den du beachten solltest: Viele Schulen verlangen für Prüfungen nach wie vor ein zugelassenes physisches Gerät. Überprüfe also die Regeln deiner Schule, bevor du den Casio komplett abschreibst.',
     ],
@@ -114,7 +114,7 @@ export const content = {
 
   sectionHow: {
     soft: false,
-    h2: 'So verwenden Sie den Rechner',
+    h2: 'So verwenden Sie den Matherechner',
     intro: 'Die Verwendung des Mathematikrechners ist kinderleicht – befolgen Sie einfach die folgenden Schritte:',
     steps: [
       'Geben Sie Ihre Aufgabe in den Rechner ein – das können Klammern, Funktionen, Grenzwerte, Ableitungen oder alles Mögliche sein – und sehen Sie sich den vollständigen Ausdruck auf dem Bildschirm an, bevor Sie die Berechnung tatsächlich starten.',
@@ -159,7 +159,7 @@ export const content = {
   },
 
   footer: {
-    tagline: 'Kostenloser wissenschaftlicher Online-Taschenrechner für Mathe, Gleichungen, Prozent, Brüche und mehr.',
+    tagline: 'Kostenloser wissenschaftlicher Matherechner für Gleichungen, Prozentrechnung, Brüche und mehr.',
     pagesNav: {
       h3: 'Seiten',
       links: [

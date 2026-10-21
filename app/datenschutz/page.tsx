@@ -42,7 +42,7 @@ export default function DatenschutzPage() {
 
       <ContentSection soft={true} h2="Welche Daten wir verarbeiten">
         <p>
-          Wir legen großen Wert auf Datensparsamkeit. Matherechner erhebt und verarbeitet <strong>keine personenbezogenen Daten</strong> wie Name, E-Mail-Adresse oder IP-Adresse, solange Sie den Taschenrechner ohne Kontaktaufnahme nutzen.
+          Wir legen großen Wert auf Datensparsamkeit. Der <a href="/" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>Matherechner</a> erhebt und verarbeitet <strong>keine personenbezogenen Daten</strong> wie Name, E-Mail-Adresse oder IP-Adresse, solange Sie den Taschenrechner ohne Kontaktaufnahme nutzen.
         </p>
         <p>
           Der Online-Taschenrechner selbst speichert Ihren Berechnungsverlauf ausschließlich im lokalen Speicher (<strong>localStorage</strong>) Ihres Browsers. Diese Daten verlassen Ihren Browser zu keiner Zeit und werden nicht an unsere Server übertragen. Sie können den Verlauf jederzeit über die Schaltfläche „Verlauf löschen" im Rechner entfernen.

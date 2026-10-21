@@ -40,6 +40,9 @@ export default function ImpressumPage() {
           12345 Musterstadt<br />
           Deutschland
         </p>
+        <p>
+          Dieses Impressum gilt für den kostenlosen <a href="/" style={{ color: 'var(--blue)', textDecoration: 'underline' }}>Matherechner</a> und alle zugehörigen Seiten auf matherechnerr.de.
+        </p>
       </ContentSection>
 
       <ContentSection soft={true} h2="Kontakt">
