@@ -199,8 +199,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-10-21T23:59:59+05:00',
-  dateModified: '2026-10-21T23:59:59+05:00',
+  datePublished: '2026-10-22T23:59:59+05:00',
+  dateModified: '2026-10-22T23:59:59+05:00',
 };
 
 const faqSchema = {
@@ -245,11 +245,27 @@ export default function HomePage() {
               height={909}
               sizes="(max-width: 620px) calc(100vw - 28px), 680px"
             />
+            <nav className="homepage-toc" aria-labelledby="homepage-toc-title">
+              <div className="homepage-toc-heading">
+                <span className="homepage-toc-icon" aria-hidden="true">≡</span>
+                <div><span>Auf dieser Seite</span><h2 id="homepage-toc-title">Inhaltsverzeichnis</h2></div>
+              </div>
+              <ol>
+                <li><a href="#vergleich"><span>01</span>Matherechner App im Vergleich</a></li>
+                <li><a href="#funktionen"><span>02</span>Funktionen des Matherechners</a></li>
+                <li><a href="#zielgruppen"><span>03</span>Für wen ist der Rechner geeignet?</a></li>
+                <li><a href="#vorteile"><span>04</span>Vorteile des Online-Rechners</a></li>
+                <li><a href="#anleitung"><span>05</span>So verwendest du den Matherechner</a></li>
+                <li><a href="#weitere-rechner"><span>06</span>Weitere nützliche Rechner</a></li>
+                <li><a href="#faq"><span>07</span>Häufig gestellte Fragen</a></li>
+                <li><a href="#fazit"><span>08</span>Fazit</a></li>
+              </ol>
+            </nav>
           </div>
         </section>
 
         {/* Was unterscheidet einen wissenschaftlichen Taschenrechner */}
-        <ContentSection soft={sectionCompare.soft} h2={sectionCompare.h2}>
+        <ContentSection soft={sectionCompare.soft} h2={sectionCompare.h2} id="vergleich">
           <p>{sectionCompare.intro}</p>
           <HighlightGrid items={sectionCompare.comparison} variant="comparison" />
           <p style={{ marginTop: '18px' }}>{sectionCompare.conclusion}</p>
@@ -258,24 +274,24 @@ export default function HomePage() {
         </ContentSection>
 
         {/* Taschenrechner mit Wurzel, Pi und Klammern */}
-        <ContentSection soft={sectionFunctions.soft} h2={sectionFunctions.h2}>
+        <ContentSection soft={sectionFunctions.soft} h2={sectionFunctions.h2} id="funktionen">
           <p>{sectionFunctions.intro}</p>
           <HighlightGrid items={sectionFunctions.subsections} variant="features" />
 
         </ContentSection>
 
         {/* Wer profitiert */}
-        <ContentSection soft={sectionWho.soft} h2={sectionWho.h2}>
+        <ContentSection soft={sectionWho.soft} h2={sectionWho.h2} id="zielgruppen">
           <HighlightGrid items={sectionWho.highlights} variant="audience" />
         </ContentSection>
 
         {/* Warum Online > Physisch */}
-        <ContentSection soft={sectionWhy.soft} h2={sectionWhy.h2}>
+        <ContentSection soft={sectionWhy.soft} h2={sectionWhy.h2} id="vorteile">
           {sectionWhy.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
         </ContentSection>
 
         {/* So verwenden Sie */}
-        <ContentSection soft={sectionHow.soft} h2={sectionHow.h2}>
+        <ContentSection soft={sectionHow.soft} h2={sectionHow.h2} id="anleitung">
           <p>{sectionHow.intro}</p>
           <ol className="steps-list">
             {sectionHow.steps.map((step, i) => <li key={i}>{step}</li>)}
@@ -291,7 +307,7 @@ export default function HomePage() {
         </ContentSection>
 
         {/* Weitere nützliche Rechner */}
-        <section className="content-section related-calculators-section">
+        <section className="content-section related-calculators-section" id="weitere-rechner">
           <div className="page-shell">
             <div className="related-calculators">
               <div className="related-calculators-heading">
@@ -320,7 +336,7 @@ export default function HomePage() {
         </ContentSection>
 
         {/* Conclusion */}
-        <ContentSection soft={conclusion.soft} h2={conclusion.h2}>
+        <ContentSection soft={conclusion.soft} h2={conclusion.h2} id="fazit">
           <p>{conclusion.body}</p>
         </ContentSection>
       </main>

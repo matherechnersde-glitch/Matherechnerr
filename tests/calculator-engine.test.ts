@@ -26,10 +26,23 @@ describe('symbolic calculator engine', () => {
     expect(quadratic).toContain('2'); expect(quadratic).toContain('3');
   });
 
+  it('solves linear and polynomial inequalities instead of evaluating them as booleans', () => {
+    expect(exact('2x+3>7')).toContain('x\\in(2,\\infty)');
+    expect(exact('2x+3\\le7')).toContain('x\\in(-\\infty,2]');
+    const quadratic = exact('x^2-5x+6\\le0');
+    expect(quadratic).toContain('[2,3]');
+  });
+
   it('expands and factors polynomials', () => {
     expect(calculateLatex('(x+5)(x+2)', 'rad', 'expand').exactLatex.replace(/\\cdot/g,'')).toContain('x^{2}+7x+10');
     const factored = calculateLatex('x^2+7x+10', 'rad', 'factor').exactLatex;
     expect(factored).toContain('x+2'); expect(factored).toContain('x+5');
+  });
+
+  it('makes the Lösungen action solve an expression set equal to zero', () => {
+    const solved = calculateLatex('x^2-5x+6', 'rad', 'solve').exactLatex;
+    expect(solved).toContain('2');
+    expect(solved).toContain('3');
   });
 
   it('applies DEG and RAD trigonometry', () => {
@@ -66,6 +79,12 @@ describe('symbolic calculator engine', () => {
     expect(exact('200-10\\%')).toBe('180');
   });
 
+  it('keeps practical terminating percentage results decimal without a reversed toggle', () => {
+    const result = calculateLatex('250\\times19\\%', 'rad');
+    expect(result.exactLatex).toBe('47.5');
+    expect(result.decimalLatex).toBeUndefined();
+  });
+
   it('supports reciprocal and inverse trigonometry', () => {
     expect(exact('\\operatorname{sec}(0)', 'rad')).toBe('1');
     expect(exact('\\operatorname{csc}(\\frac{\\pi}{2})', 'rad')).toBe('1');
@@ -81,6 +100,18 @@ describe('symbolic calculator engine', () => {
 
   it('keeps the ratio percentage convention', () => {
     expect(exact('\\frac{45}{180}\\times100\\%')).toBe('25\\%');
+  });
+  it('rejects undefined domains with specific German errors', () => {
+    expect(() => exact('1\\div0')).toThrow('Division durch null ist nicht definiert');
+    expect(() => exact('(-1)!')).toThrow('Fakultät ist nur für nichtnegative ganze Zahlen definiert');
+    expect(() => exact('C(3,5)')).toThrow('n und k müssen ganze Zahlen');
+    expect(() => exact('\\tan(90)', 'deg')).toThrow('Funktion an dieser Stelle nicht definiert');
+  });
+  it('fully simplifies ordinary complex arithmetic', () => {
+    expect(exact('(1+i)(1-i)')).toBe('2');
+  });
+  it('rounds optional decimal output to sensible precision', () => {
+    expect(calculateLatex('\\int_{0}^{2}x^2\\,dx', 'rad').decimalLatex).toBe('2.66666666667');
   });
   it('rejects incomplete expressions with German errors', () => {
     expect(() => exact('\\frac{\\placeholder{}}{2}')).toThrow('Unvollständiger Ausdruck');
