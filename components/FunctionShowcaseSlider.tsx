@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const slides = [
   { src: '/Bildschirmfoto-1.webp', width: 1482, height: 1061 },
@@ -16,11 +16,12 @@ export default function FunctionShowcaseSlider() {
   const trackRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<number | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [interactionPaused, setInteractionPaused] = useState(false);
+  const [userPaused, setUserPaused] = useState(false);
 
-  const goToSlide = useCallback((index: number) => {
-    const nextIndex = Math.max(0, Math.min(slides.length - 1, index));
+  const scrollToSlide = useCallback((index: number) => {
     const track = trackRef.current;
-    const target = track?.children[nextIndex] as HTMLElement | undefined;
+    const target = track?.children[index] as HTMLElement | undefined;
     const first = track?.firstElementChild as HTMLElement | null;
     if (!track || !target || !first) return;
 
@@ -28,8 +29,25 @@ export default function FunctionShowcaseSlider() {
       left: target.offsetLeft - first.offsetLeft,
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
     });
-    setActiveSlide(nextIndex);
   }, []);
+
+  const goToSlide = useCallback((index: number) => {
+    const nextIndex = Math.max(0, Math.min(slides.length - 1, index));
+    scrollToSlide(nextIndex);
+    setActiveSlide(nextIndex);
+  }, [scrollToSlide]);
+
+  useEffect(() => {
+    if (interactionPaused || userPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const timer = window.setInterval(() => {
+      setActiveSlide(current => {
+        const next = (current + 1) % slides.length;
+        scrollToSlide(next);
+        return next;
+      });
+    }, 3000);
+    return () => window.clearInterval(timer);
+  }, [activeSlide, interactionPaused, scrollToSlide, userPaused]);
 
   const updateActiveSlide = () => {
     if (frameRef.current !== null) cancelAnimationFrame(frameRef.current);
@@ -53,7 +71,17 @@ export default function FunctionShowcaseSlider() {
   };
 
   return (
-    <section className="function-showcase" aria-labelledby="function-showcase-title">
+    <section
+      className="function-showcase"
+      aria-labelledby="function-showcase-title"
+      onFocusCapture={() => setInteractionPaused(true)}
+      onBlurCapture={event => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setInteractionPaused(false);
+      }}
+      onPointerDown={() => setInteractionPaused(true)}
+      onPointerUp={() => setInteractionPaused(false)}
+      onPointerCancel={() => setInteractionPaused(false)}
+    >
       <div className="function-showcase-head">
         <div>
           <span>Visueller Überblick</span>
@@ -132,19 +160,31 @@ export default function FunctionShowcaseSlider() {
       </div>
 
       <div className="function-showcase-footer">
-        <div className="function-showcase-dots" role="group" aria-label="Funktionsansicht auswählen">
-          {slides.map((slide, index) => (
-            <button
-              type="button"
-              className={activeSlide === index ? 'active' : ''}
-              onClick={() => goToSlide(index)}
-              aria-label={`Funktionsansicht ${index + 1} anzeigen`}
-              aria-current={activeSlide === index ? 'true' : undefined}
-              key={slide.src}
-            >
-              <span aria-hidden="true" />
-            </button>
-          ))}
+        <div className="function-showcase-controls">
+          <button
+            type="button"
+            className="function-showcase-autoplay"
+            onClick={() => setUserPaused(value => !value)}
+            aria-label={userPaused ? 'Automatischen Bildwechsel starten' : 'Automatischen Bildwechsel pausieren'}
+            aria-pressed={userPaused}
+          >
+            <span aria-hidden="true">{userPaused ? '▶' : 'Ⅱ'}</span>
+            {userPaused ? 'Abspielen' : 'Pause'}
+          </button>
+          <div className="function-showcase-dots" role="group" aria-label="Funktionsansicht auswählen">
+            {slides.map((slide, index) => (
+              <button
+                type="button"
+                className={activeSlide === index ? 'active' : ''}
+                onClick={() => goToSlide(index)}
+                aria-label={`Funktionsansicht ${index + 1} anzeigen`}
+                aria-current={activeSlide === index ? 'true' : undefined}
+                key={slide.src}
+              >
+                <span aria-hidden="true" />
+              </button>
+            ))}
+          </div>
         </div>
         <span className="function-showcase-swipe">Wischen oder Pfeile verwenden</span>
       </div>
