@@ -199,8 +199,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-10-23T23:59:59+05:00',
-  dateModified: '2026-10-23T23:59:59+05:00',
+  datePublished: '2026-10-25T23:59:59+05:00',
+  dateModified: '2026-10-25T23:59:59+05:00',
 };
 
 const faqSchema = {
@@ -339,6 +339,33 @@ export default function HomePage() {
         <ContentSection soft={conclusion.soft} h2={conclusion.h2} id="fazit">
           <p>{conclusion.body}</p>
         </ContentSection>
+
+        <section className="homepage-owner-section" aria-labelledby="homepage-owner-name">
+          <div className="page-shell">
+            <article className="homepage-owner-card">
+              <div className="homepage-owner-photo">
+                <Image
+                  src="/profile-pic.webp"
+                  alt="Julian von Berg, Betreiber von Matherechner"
+                  width={480}
+                  height={640}
+                  sizes="(max-width: 620px) 112px, 156px"
+                  loading="lazy"
+                />
+              </div>
+              <div className="homepage-owner-content">
+                <span className="homepage-owner-kicker">Hinter Matherechner</span>
+                <h2 id="homepage-owner-name">Julian von Berg</h2>
+                <p className="homepage-owner-role">Betreiber von Matherechner</p>
+                <p>Julian von Berg betreut Matherechner mit dem Ziel, Schülerinnen, Schülern, Studierenden und allen, die im Alltag rechnen, ein verlässliches und leicht verständliches Werkzeug bereitzustellen. Er arbeitet kontinuierlich daran, die Rechner übersichtlich, zugänglich und praktisch zu gestalten, damit mathematische Aufgaben leichter nachvollziehbar werden.</p>
+                <div className="homepage-owner-links">
+                  <Link href="/ueber-uns/">Mehr über Matherechner <span aria-hidden="true">→</span></Link>
+                  <Link href="/kontakt/">Kontakt aufnehmen</Link>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
       </main>
     </>
   );
