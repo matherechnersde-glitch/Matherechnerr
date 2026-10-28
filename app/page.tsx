@@ -206,7 +206,7 @@ const webAppSchema = {
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
   datePublished: '2026-10-28T23:59:59+05:00',
-  dateModified: '2026-10-28T23:59:59+05:00',
+  dateModified: '2026-10-27T23:59:59+05:00',
 };
 
 const faqSchema = {
