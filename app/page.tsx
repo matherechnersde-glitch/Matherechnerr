@@ -96,6 +96,12 @@ const specialCalculators = [
 ] as const;
 type FunctionRow = readonly [string, string, string, string, string];
 
+function linkPhrase(text: string, phrase: string, href: string) {
+  const index = text.indexOf(phrase);
+  if (index < 0) return text;
+  return <>{text.slice(0, index)}<Link className="contextual-link" href={href}>{phrase}</Link>{text.slice(index + phrase.length)}</>;
+}
+
 const supportedFunctionGroups: ReadonlyArray<{
   title: string;
   rows: ReadonlyArray<FunctionRow>;
@@ -199,8 +205,8 @@ const webAppSchema = {
   applicationCategory: 'UtilityApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  datePublished: '2026-10-27T23:59:59+05:00',
-  dateModified: '2026-10-27T23:59:59+05:00',
+  datePublished: '2026-10-28T23:59:59+05:00',
+  dateModified: '2026-10-28T23:59:59+05:00',
 };
 
 const faqSchema = {
@@ -235,7 +241,7 @@ export default function HomePage() {
             <h1>{hero.h1}</h1>
             <Calculator />
             <div className="intro-card">
-              {hero.intro.map((p, i) => <p key={i}>{p}</p>)}
+              {hero.intro.map((p, i) => <p key={i}>{i === 0 ? linkPhrase(p, 'Matherechner', '/') : p}</p>)}
             </div>
             <Image
               className="intro-followup-image"
@@ -276,7 +282,14 @@ export default function HomePage() {
         {/* Taschenrechner mit Wurzel, Pi und Klammern */}
         <ContentSection soft={sectionFunctions.soft} h2={sectionFunctions.h2} id="funktionen">
           <p>{sectionFunctions.intro}</p>
-          <HighlightGrid items={sectionFunctions.subsections} variant="features" />
+          <HighlightGrid items={sectionFunctions.subsections.map(item => ({
+            ...item,
+            p: item.h3 === 'Pi für die Geometrie'
+              ? linkPhrase(item.p, 'Matherechner Pi', '/matherechner-pi/')
+              : item.h3 === 'Brüche'
+                ? linkPhrase(item.p, 'Bruchrechner', '/bruchrechner/')
+                : item.p,
+          }))} variant="features" />
 
         </ContentSection>
 

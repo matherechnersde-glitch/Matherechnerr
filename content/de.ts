@@ -68,11 +68,11 @@ export const content = {
       },
       {
         h3: 'Pi für die Geometrie',
-        p: 'Kreisprobleme kommen in der Schulmathematik sehr häufig vor, und das manuelle Eintippen von 3,14159 ist sowohl langsam als auch leicht fehleranfällig. Der Wert von Pi ist bereits als Konstante gespeichert, sodass die Berechnung der Kreisfläche oder eines Kreissektors ganz einfach ist.',
+        p: 'Kreisprobleme kommen in der Schulmathematik sehr häufig vor, und das manuelle Eintippen von 3,14159 ist sowohl langsam als auch leicht fehleranfällig. Im Matherechner Pi ist Pi bereits als Konstante gespeichert, sodass sich Kreisflächen und Kreissektoren bequem berechnen lassen.',
       },
       {
         h3: 'Brüche',
-        p: 'Brüche sind knifflig: in diesem Bereich verlieren Schüler die meisten Punkte. Mit dieser Funktion kannst du beispielsweise ¾ + ⅖ direkt eingeben und erhältst ein sauberes Ergebnis in Bruchform, ohne alles erst in Dezimalzahlen umrechnen zu müssen und dabei an Genauigkeit zu verlieren.',
+        p: 'Brüche sind knifflig: in diesem Bereich verlieren Schüler die meisten Punkte. Mit dem Bruchrechner kannst du Brüche addieren, kürzen und in Dezimalzahlen oder gemischte Zahlen umwandeln, ohne dabei an Genauigkeit zu verlieren.',
       },
       {
         h3: 'Trigonometrie: Sinus, Kosinus, Tangens',

@@ -1,4 +1,9 @@
-import { HighlightItem } from '@/content/de';
+import type { ReactNode } from 'react';
+
+interface HighlightItem {
+  h3: string;
+  p: ReactNode;
+}
 
 interface Props {
   items: HighlightItem[];
