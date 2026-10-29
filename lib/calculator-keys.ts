@@ -17,7 +17,7 @@ const ALGEBRA: Key[][] = [
 const TRIG: Key[][] = [
   [{ label: 'sin', aria: 'Sinus', insert: '\\sin(#0)' }, { label: 'cos', aria: 'Kosinus', insert: '\\cos(#0)' }, { label: 'tan', aria: 'Tangens', insert: '\\tan(#0)' }],
   [{ label: 'csc', aria: 'Kosekans', insert: '\\operatorname{csc}(#0)' }, { label: 'sec', aria: 'Sekans', insert: '\\operatorname{sec}(#0)' }, { label: 'cot', aria: 'Kotangens', insert: '\\operatorname{cot}(#0)' }],
-  [{ label: 'arcsin', aria: 'Arkussinus', insert: '\\arcsin(#0)' }, { label: 'arccos', aria: 'Arkuskosinus', insert: '\\arccos(#0)' }, { label: 'arctan', aria: 'Arkustangens', insert: '\\arctan(#0)' }],
+  [{ label: 'sin⁻¹', aria: 'Arkussinus', insert: '\\arcsin(#0)' }, { label: 'cos⁻¹', aria: 'Arkuskosinus', insert: '\\arccos(#0)' }, { label: 'tan⁻¹', aria: 'Arkustangens', insert: '\\arctan(#0)' }],
   [{ label: 'x²', aria: 'Quadrat', insert: '#@^2' }, { label: 'x⁻¹', aria: 'Kehrwert als negative Potenz', insert: '#@^{-1}' }, { label: 'π', aria: 'Kreiszahl Pi', insert: '\\pi' }],
   [{ label: 'x', aria: 'Variable x', insert: 'x' }, { label: 'y', aria: 'Variable y', insert: 'y' }, { label: '=', aria: 'Gleichheitszeichen', insert: '=' }],
 ];

@@ -1,19 +1,32 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 interface HeaderContent {
   navLinks: Array<{ label: string; href: string }>;
 }
 
 export default function Header({ content }: { content: HeaderContent }) {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link prefetch={false} className="brand" href="/">
+        <Link prefetch={false} className="brand" href="/" onClick={() => setMenuOpen(false)}>
           <img src="/Matherechnerr-logo.webp" alt="Matherechner – kostenloser Online-Taschenrechner" className="site-logo site-logo--header" width="400" height="170" loading="eager" fetchPriority="high" decoding="async" />
         </Link>
-        <input type="checkbox" id="nav-toggle" className="nav-toggle" aria-hidden="true" />
-        <label htmlFor="nav-toggle" className="hamburger" aria-label="Navigation öffnen"><span></span><span></span><span></span></label>
-        <nav className="header-nav" aria-label="Hauptnavigation">
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" aria-hidden="true" checked={menuOpen} onChange={(event) => setMenuOpen(event.target.checked)} />
+        <label htmlFor="nav-toggle" className="hamburger" aria-label={menuOpen ? 'Navigation schließen' : 'Navigation öffnen'} aria-expanded={menuOpen} aria-controls="main-navigation"><span></span><span></span><span></span></label>
+        <nav id="main-navigation" className="header-nav" aria-label="Hauptnavigation" onClick={(event) => {
+          if ((event.target as HTMLElement).closest('a')) setMenuOpen(false);
+        }}>
           <Link prefetch={false} href="/">Matherechner</Link>
           <div className="nav-dropdown">
             <button className="nav-dropdown-trigger" type="button" aria-haspopup="true">Rechner <span aria-hidden="true">⌄</span></button>

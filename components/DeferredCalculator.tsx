@@ -60,7 +60,7 @@ export default function DeferredCalculator() {
       {loading && <span className="gcalc-deferred-status" role="status">Mathe-Werkzeuge werden aktiviert …</span>}
     </div>
 
-    <div className="gcalc-tabs" role="tablist">{(['algebra', 'trig', 'calculus'] as Tab[]).map((item) => <button key={item} role="tab" type="button" aria-selected={tab === item} className={`gcalc-tab gcalc-tab--${item}${tab === item ? ' gcalc-tab--active' : ''}`} onClick={() => { setTab(item); loadCalculator(); }}>{{ algebra: 'Algebra', trig: 'Trigonometrie', calculus: 'Analysis' }[item]}</button>)}</div>
+    <div className="gcalc-tabs" role="tablist">{(['algebra', 'trig', 'calculus'] as Tab[]).map((item) => <button key={item} role="tab" type="button" aria-selected={tab === item} className={`gcalc-tab gcalc-tab--${item}${tab === item ? ' gcalc-tab--active' : ''}`} onClick={() => { setTab(item); loadCalculator(); }}>{{ algebra: 'Algebra', trig: 'Trigonometrie', calculus: 'Calculus' }[item]}</button>)}</div>
 
     <div className={`gcalc-keypad gcalc-keypad--${tab}`}>{functionRows.map((row, index) => <div className="gcalc-row" key={index}>{row.map((key) => <button type="button" key={key.aria} className="gcalc-btn gcalc-btn--fn" aria-label={key.aria} onClick={() => handleKey(key)}>{key.label}</button>)}{COMMON[index].map((key) => <button type="button" key={key.aria} className={`gcalc-btn gcalc-btn--num${key.variant ? ` gcalc-btn--${key.variant}` : ''}`} aria-label={key.aria} onClick={() => handleKey(key)}>{key.label}</button>)}</div>)}</div>
 
