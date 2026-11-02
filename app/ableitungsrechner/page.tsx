@@ -9,7 +9,8 @@ import { content } from '@/content/de';
 const title = 'Ableitungsrechner';
 const metaTitle = 'Ableitungsrechner: Ableitungen mit Rechenweg verstehen';
 const description = 'Der Ableitungsrechner bestimmt Ableitungen symbolisch und zeigt den Rechenweg verständlich: für Potenzen, Produkte, Kettenregel und mehr.';
-const updated = '2026-10-02T23:59:59+05:00';
+const published = '2026-11-02T23:59:59+05:00';
+const modified = '2026-10-02T23:59:59+05:00';
 const canonical = '/ableitungsrechner/';
 const image = '/Ableitungsrechner.webp';
 
@@ -24,15 +25,15 @@ const faq = [
 export const metadata: Metadata = {
   title: { absolute: metaTitle }, description,
   alternates: { canonical },
-  openGraph: { type: 'article', url: canonical, title: metaTitle, description, images: [{ url: image, width: 1200, height: 630, alt: 'Ableitungsrechner mit Rechenweg' }], publishedTime: updated, modifiedTime: updated },
+  openGraph: { type: 'article', url: canonical, title: metaTitle, description, images: [{ url: image, width: 1200, height: 630, alt: 'Ableitungsrechner mit Rechenweg' }], publishedTime: published, modifiedTime: modified },
   twitter: { card: 'summary_large_image', title: metaTitle, description, images: [image] },
 };
 
 export default function AbleitungsrechnerPage() {
   const pageUrl = `${content.site.url}${canonical}`;
   const schema = { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', headline: metaTitle, name: title, description, url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, image: `${content.site.url}${image}`, author: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, publisher: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, datePublished: updated, dateModified: updated, inLanguage: 'de-DE' },
-    { '@type': 'WebApplication', name: title, url: pageUrl, applicationCategory: 'EducationalApplication', operatingSystem: 'Any', description, image: `${content.site.url}${image}`, offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }, datePublished: updated, dateModified: updated },
+    { '@type': 'Article', headline: metaTitle, name: title, description, url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, image: `${content.site.url}${image}`, author: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, publisher: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, datePublished: published, dateModified: modified, inLanguage: 'de-DE' },
+    { '@type': 'WebApplication', name: title, url: pageUrl, applicationCategory: 'EducationalApplication', operatingSystem: 'Any', description, image: `${content.site.url}${image}`, offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }, datePublished: published, dateModified: modified },
     { '@type': 'FAQPage', mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Startseite', item: `${content.site.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${content.site.url}/blog/` }, { '@type': 'ListItem', position: 3, name: title, item: pageUrl }] },
   ] };
@@ -50,7 +51,7 @@ export default function AbleitungsrechnerPage() {
 
       <ContentSection soft h2="Was eine Ableitung beschreibt">
         <p>Die Ableitung f&apos;(x) misst die Steigung einer Funktion an jeder einzelnen Stelle. Anschaulich ist es die Steigung der Tangente, die den Graphen in einem Punkt berührt. In der Sprache des Alltags ist es eine Änderungsrate: Wie stark wächst oder fällt ein Wert genau hier, in diesem Moment?</p>
-        <p>Dieses Bild trägt weit. Beim Fahren ist der Weg die Funktion und die Geschwindigkeit ihre Ableitung. Wer das einmal verinnerlicht hat, sieht in f&apos;(x) keine abstrakte Formel mehr, sondern eine konkrete Aussage über Veränderung.</p>
+        <p>Dieses Bild trägt weit. Beim Fahren ist der Weg die Funktion und die Geschwindigkeit ihre Ableitung. Wer das einmal verinnerlicht hat, sieht in f&apos;(x) keine abstrakte Formel mehr, sondern eine konkrete Aussage über Veränderung. Die passende Gegenrichtung lernst du beim <Link className="inline-link" href="/integralrechner/">Integral als Umkehrung der Ableitung</Link> kennen.</p>
       </ContentSection>
 
       <ContentSection h2="Was der Ableitungsrechner macht">

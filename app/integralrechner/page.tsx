@@ -9,7 +9,8 @@ import { content } from '@/content/de';
 const title = 'Integralrechner';
 const metaTitle = 'Integralrechner: Stammfunktion & Integral berechnen';
 const description = 'Integralrechner einfach erklärt: Stammfunktion, bestimmtes und unbestimmtes Integral, Integrationsregeln und Flächenberechnung mit Rechenweg verständlich gemacht.';
-const updated = '2026-10-02T23:59:59+05:00';
+const published = '2026-11-02T23:59:59+05:00';
+const modified = '2026-10-02T23:59:59+05:00';
 const canonical = '/integralrechner/';
 const image = '/Integralrechner.webp';
 
@@ -24,15 +25,15 @@ const faq = [
 export const metadata: Metadata = {
   title: { absolute: metaTitle }, description,
   alternates: { canonical },
-  openGraph: { type: 'article', url: canonical, title: metaTitle, description, images: [{ url: image, width: 1200, height: 630, alt: 'Integralrechner für Stammfunktionen und bestimmte Integrale' }], publishedTime: updated, modifiedTime: updated },
+  openGraph: { type: 'article', url: canonical, title: metaTitle, description, images: [{ url: image, width: 1200, height: 630, alt: 'Integralrechner für Stammfunktionen und bestimmte Integrale' }], publishedTime: published, modifiedTime: modified },
   twitter: { card: 'summary_large_image', title: metaTitle, description, images: [image] },
 };
 
 export default function IntegralrechnerPage() {
   const pageUrl = `${content.site.url}${canonical}`;
   const schema = { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'Article', headline: metaTitle, name: title, description, url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, image: `${content.site.url}${image}`, author: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, publisher: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, datePublished: updated, dateModified: updated, inLanguage: 'de-DE' },
-    { '@type': 'WebApplication', name: title, url: pageUrl, applicationCategory: 'EducationalApplication', operatingSystem: 'Any', description, image: `${content.site.url}${image}`, offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }, datePublished: updated, dateModified: updated },
+    { '@type': 'Article', headline: metaTitle, name: title, description, url: pageUrl, mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl }, image: `${content.site.url}${image}`, author: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, publisher: { '@type': 'Organization', name: content.site.name, url: `${content.site.url}/` }, datePublished: published, dateModified: modified, inLanguage: 'de-DE' },
+    { '@type': 'WebApplication', name: title, url: pageUrl, applicationCategory: 'EducationalApplication', operatingSystem: 'Any', description, image: `${content.site.url}${image}`, offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }, datePublished: published, dateModified: modified },
     { '@type': 'FAQPage', mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.q, acceptedAnswer: { '@type': 'Answer', text: item.a } })) },
     { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Startseite', item: `${content.site.url}/` }, { '@type': 'ListItem', position: 2, name: 'Blog', item: `${content.site.url}/blog/` }, { '@type': 'ListItem', position: 3, name: title, item: pageUrl }] },
   ] };
@@ -49,7 +50,7 @@ export default function IntegralrechnerPage() {
 
       <ContentSection soft h2="Was ein Integral beschreibt">
         <p>Anschaulich misst ein Integral die Fläche zwischen dem Graphen einer Funktion und der x-Achse. Man kann es sich als Aufsummieren unendlich vieler, unendlich schmaler Streifen vorstellen. Genau diese Summe ergibt am Ende die Fläche.</p>
-        <p>Das Integrieren ist dabei die Umkehrung des Ableitens. Während die Ableitung nach der Steigung fragt, fragt das Integral danach, welche Funktion diese Steigung ursprünglich hatte. Diese beiden Richtungen sind das Herzstück der Analysis.</p>
+        <p>Das Integrieren ist dabei die Umkehrung des Ableitens. Während die Ableitung nach der Steigung fragt, fragt das Integral danach, welche Funktion diese Steigung ursprünglich hatte. Möchtest du zuerst die <Link className="inline-link" href="/ableitungsrechner/">Ableitung einer Funktion berechnen</Link>, findest du dort den passenden Rechner mit Rechenweg. Diese beiden Richtungen sind das Herzstück der Analysis.</p>
         <Image className="article-featured-image" src={image} alt="Integralrechner für Stammfunktion, Grenzen und Flächenberechnung" width={1200} height={630} priority sizes="(max-width: 620px) calc(100vw - 52px), 888px" />
       </ContentSection>
 
